@@ -11,6 +11,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String test = "Test being ran through Android Studio's VCS rather than SourceTree";
-        String otherConflict = "new conflic";
+        String otherConflict = "new conflicts again";
     }
 }
