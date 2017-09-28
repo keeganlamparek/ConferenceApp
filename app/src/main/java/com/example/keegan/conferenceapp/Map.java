@@ -6,5 +6,7 @@ package com.example.keegan.conferenceapp;
 
 public class Map {
 
-    system.out.println("Hello Keegan")
+    private String eventRoom;
+    private int roomNumber;
+    private String buildingName;
 }
