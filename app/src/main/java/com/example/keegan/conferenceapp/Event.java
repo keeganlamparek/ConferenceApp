@@ -48,6 +48,20 @@ public class Event {
         this.sessionStatusNotes = sessionStatusNotes;
     }
 
-
+    public void setSessionDescription(String newDescription) {
+        this.sessionDescription = newDescription;
+    }
+    
+    public void setSessionLongDescription(String newLongDescription) {
+        this.sessionLongDescription = newLongDescription;
+    }
+    
+    public void setTrackDescription(String newTrackDescription) {
+        this.trackDescription = newTrackDescription;
+    }
+    
+    public void setTrackSecondDescription(String newTrackSecondDescription) {
+        this.trackSecondDescription = newTrackSecondDescription;
+    }
 
 }
