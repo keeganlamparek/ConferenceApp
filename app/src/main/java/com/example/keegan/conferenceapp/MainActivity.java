@@ -2,6 +2,8 @@ package com.example.keegan.conferenceapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.DatePicker;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String test = "Test being ran through Android Studio's VCS rather than SourceTree";
-        String otherConflict = "new conflicts again";
+        DatePicker day = (DatePicker) findViewById(R.id.pickDate);
+
     }
 }
