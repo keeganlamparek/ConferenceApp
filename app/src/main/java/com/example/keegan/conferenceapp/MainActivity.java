@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String test = "Test being ran through Android Studio's VCS rather than SourceTree";
-        String otherConflict = "new conflicts again";
+        Schedule example = new Schedule("9/29/17", "1:00 PM", "1:50 PM", "event1");
+        example.toString();
     }
 }
