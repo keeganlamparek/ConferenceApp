@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">ConferenceApp</string>
-    <string-array name="txtGroup">
-        <item>01/01/17</item>
-        <item>02/02/17</item>
-    </string-array>
     <string name="promptTxt">Select Date</string>
 </resources>
