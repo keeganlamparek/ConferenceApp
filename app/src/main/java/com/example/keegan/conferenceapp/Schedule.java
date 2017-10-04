@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Schedule {
 
-    public List<String> listOfDays = new ArrayList<>();
+    private List<String> listOfDays = new ArrayList<>();
     private String timeBlock;
     private String eventName;
     private List<String> listOfTimeBlocks  = new ArrayList<>();
@@ -21,10 +21,12 @@ public class Schedule {
         this.eventName = eventName;
     }
 
+    public void addDay(String dayToAdd){
+        listOfDays.add(dayToAdd);
+    }
 
-
-    public void addTimeBlock(String timeBlock){
-
+    public List<String> getDays(){
+        return this.listOfDays;
     }
 
     @Override
