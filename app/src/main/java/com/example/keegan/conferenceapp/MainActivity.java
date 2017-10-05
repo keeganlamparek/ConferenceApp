@@ -9,30 +9,29 @@ import java.util.List;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
+import android.content.SharedPreferences;
+
 
 public class MainActivity extends ListActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        Schedule example = new Schedule("09/29/17", "1:00 PM", "1:50 PM", "event1");
+        Schedule example = new Schedule("09/29/17", "1:00 PM", "1:50 PM");
 
         example.addDay("10/03/17");
         example.addDay("08/01/17");
+        example.addStartTime("2:00 PM");
+        example.addEndTime("3:50");
+       // example.commitTimes();
 
         List<String> daysList = example.getDays();
 
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textList, daysList);
-        setListAdapter(dataAdapter);
+        setListAdapter(new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textList, daysList));
 
     }
 
