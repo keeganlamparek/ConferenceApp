@@ -20,13 +20,16 @@ public class MainActivity extends ListActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         Schedule example = new Schedule("09/29/17", "1:00 PM", "1:50 PM");
+
+
 
         example.addDay("10/03/17");
         example.addDay("08/01/17");
         example.addStartTime("2:00 PM");
         example.addEndTime("3:50");
-       // example.commitTimes();
+
 
         List<String> daysList = example.getDays();
 

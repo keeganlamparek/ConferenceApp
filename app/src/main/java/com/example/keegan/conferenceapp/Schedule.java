@@ -2,14 +2,13 @@ package com.example.keegan.conferenceapp;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.content.SharedPreferences;
+
 /**
  * Created by Keegan on 9/21/2017.
  */
 
 public class Schedule {
 
-    public static final String PREFS_NAME = "SchedulePrefs";
     private List<String> listOfDays = new ArrayList<>();
     private List<String> listOfStartTimes  = new ArrayList<>();
     private List<String> listOfEndTimes  = new ArrayList<>();
@@ -33,10 +32,6 @@ public class Schedule {
         listOfEndTimes.add(timeToAdd);
     }
 
-    public void commitChanges(){
-        // figure this out tomorrow
-
-    }
 
     public List<String> getDays(){
         return this.listOfDays;
