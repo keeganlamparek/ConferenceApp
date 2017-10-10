@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">ConferenceApp</string>
-    <string name="promptTxt">Select Date</string>
-    <string name="title_activity_kent_floor_selection">KentFloorSelectionActivity</string>
+    <string name="mainActivityText">Select Date</string>
 </resources>
