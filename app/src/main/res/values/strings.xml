@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ConferenceApp</string>
     <string name="promptTxt">Select Date</string>
-    <string name="title_activity_kent_floor_selection">KentFloorSelectionActivity</string>
+    <string name="firstFloorButtonText">Kent First Floor Map</string>
+    <string name="secondFloorButtonText">Kent Second Floor Map</string>
+    <string name="mainActivityMapsText">Maps</string>
 </resources>

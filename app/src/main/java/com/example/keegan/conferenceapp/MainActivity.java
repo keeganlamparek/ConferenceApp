@@ -1,5 +1,6 @@
 package com.example.keegan.conferenceapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -32,6 +34,16 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         dataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         datesGroup.setAdapter(dataAdapter);
 
+
+        Button mainMapsButton = (Button) findViewById(R.id.mainMapsButton);
+        mainMapsButton.setOnClickListener(new View.OnClickListener() {
+          public void onClick(View v){
+          Intent toMapSelector = new Intent(MainActivity.this, KentFloorSelectorActivity.class);
+          startActivity(toMapSelector);
+                                              }
+                                          }
+        );
+
     }
 
     @Override
@@ -45,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     public void onNothingSelected(AdapterView<?> parent) {
         // Another interface callback
     }
+
 
 
 }
