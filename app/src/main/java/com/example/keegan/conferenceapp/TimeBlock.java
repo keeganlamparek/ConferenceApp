@@ -24,9 +24,13 @@ public class TimeBlock {
 
     }
 
+    public int getMaxEvents(){
+        return maxEvents;
+    }
+
 
     public String toString(){
-        return "This time block is on " + "(NA)" + "and goes from: " + this.startTime.toString() + " to " + this.endTime.toString() + ".";
+        return "This time block is on goes from: " + this.startTime.toString() + " to " + this.endTime.toString() + ".";
     }
 
 }
