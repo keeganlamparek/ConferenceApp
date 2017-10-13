@@ -4,6 +4,7 @@ package com.example.keegan.conferenceapp;
 
 import java.sql.Time;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Created by Keegan on 10/5/2017.
@@ -12,11 +13,11 @@ import java.util.Calendar;
 public class TimeBlock {
 
 
-    private Calendar startTime;
-    private Calendar endTime;
+    private GregorianCalendar startTime;
+    private GregorianCalendar endTime;
     private int maxEvents;
 
-    public TimeBlock(Calendar startTime, Calendar endTime, int maxEvents) {
+    public TimeBlock(GregorianCalendar startTime, GregorianCalendar endTime, int maxEvents) {
         this.maxEvents = maxEvents;
         this.startTime = startTime;
         this.endTime = endTime;

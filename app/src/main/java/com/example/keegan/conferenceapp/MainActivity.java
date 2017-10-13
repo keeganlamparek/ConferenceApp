@@ -8,6 +8,7 @@ import android.os.Bundle;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import android.app.Activity;
 import android.os.Bundle;
@@ -24,33 +25,32 @@ public class MainActivity extends ListActivity{
 
 
 
-        Calendar startTime1 = Calendar.getInstance();
-        Calendar endTime1 = Calendar.getInstance();
-        Calendar startTime2 = Calendar.getInstance();
-        Calendar endTime2 = Calendar.getInstance();
 
+        GregorianCalendar day = new GregorianCalendar(2017, 10, 12);
 
-        startTime1.set(Calendar.HOUR_OF_DAY, 11);
-        endTime1.set(Calendar.HOUR_OF_DAY, 12);
+        GregorianCalendar startTime1 = new GregorianCalendar(2017, 10, 12, 9, 0);
+        GregorianCalendar endTime1 = new GregorianCalendar(2017, 10, 12, 10, 0);
 
-        startTime2.set(Calendar.HOUR_OF_DAY, 13);
-        endTime2.set(Calendar.HOUR_OF_DAY, 14);
+        GregorianCalendar startTime2 = new GregorianCalendar(2017, 10, 12, 12, 0);
+        GregorianCalendar endTime2 = new GregorianCalendar(2017, 10, 12, 13, 0);
+
 
         TimeBlock block1 = new TimeBlock(startTime1, endTime1, 4);
         TimeBlock block2 = new TimeBlock(startTime2, endTime2, 5);
 
-        Schedule newSchedule = new Schedule();
-        newSchedule.addTimeBlock(block1);
+        ArrayList<TimeBlock> timeBlocks = new ArrayList<TimeBlock>();
+        timeBlocks.add(block1);
+
+
+        Schedule newSchedule = new Schedule(timeBlocks, day);
+
         newSchedule.addTimeBlock(block2);
 
-        List<String> timeBlocks = new ArrayList<>();
-
-        timeBlocks.add(newSchedule.getBlocks());
 
 
 
 
-        setListAdapter(new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textList, daysList));
+     //   setListAdapter(new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textList, timeBlocks));
 
     }
 

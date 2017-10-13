@@ -1,6 +1,7 @@
 package com.example.keegan.conferenceapp;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -9,7 +10,13 @@ import java.util.List;
 
 public class Schedule {
 
-    private List<TimeBlock> timeBlockList = new ArrayList<TimeBlock>();
+    private List<TimeBlock> timeBlockList;
+    private GregorianCalendar day;
+
+    public Schedule(ArrayList<TimeBlock> timeBlocks, GregorianCalendar day){
+        this.timeBlockList = timeBlocks;
+        this.day = day;
+    }
 
     public void addTimeBlock(TimeBlock newTimeBlock){
         timeBlockList.add(newTimeBlock);
@@ -17,14 +24,7 @@ public class Schedule {
 
     public String getBlocks(){
 
-
-        String timeBlock = "";
-
-        for(int i = 0; i < timeBlockList.size(); i++){
-            timeBlock = timeBlockList.get(i).toString() + ",";
-        }
-
-        return timeBlock;
+        return "";
     }
 
     @Override
