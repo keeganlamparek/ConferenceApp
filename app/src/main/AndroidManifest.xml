@@ -19,6 +19,7 @@
         <activity android:name=".KentSecondFloorActivity" />
         <activity android:name=".KentFirstFloorActivity" />
         <activity android:name=".KentFloorSelectorActivity"></activity>
+        <activity android:name=".ScheduleActivity"></activity>
     </application>
 
 </manifest>

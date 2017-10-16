@@ -45,6 +45,6 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return day.get(GregorianCalendar.DAY_OF_MONTH) + "";
+        return day.get(GregorianCalendar.MONTH) + "/" + day.get(GregorianCalendar.DAY_OF_MONTH);
     }
 }
