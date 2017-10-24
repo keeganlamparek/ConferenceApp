@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".KentSecondFloorActivity" />
+        <activity android:name=".ScheduleActivity" />
         <activity android:name=".KentFirstFloorActivity" />
         <activity android:name=".KentFloorSelectorActivity"></activity>
     </application>
