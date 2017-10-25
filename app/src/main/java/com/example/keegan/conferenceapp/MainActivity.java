@@ -1,5 +1,6 @@
 package com.example.keegan.conferenceapp;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,56 +9,37 @@ import java.util.List;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ListView;
+import android.content.SharedPreferences;
 
-public class MainActivity extends AppCompatActivity implements OnItemSelectedListener{
+
+public class MainActivity extends ListActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        Schedule example = new Schedule("09/29/17", "1:00 PM", "1:50 PM", "event1");
+
+        Schedule example = new Schedule("09/29/17", "1:00 PM", "1:50 PM");
+
+
 
         example.addDay("10/03/17");
         example.addDay("08/01/17");
+        example.addStartTime("2:00 PM");
+        example.addEndTime("3:50");
+
 
         List<String> daysList = example.getDays();
-        
-        Spinner datesGroup = (Spinner) findViewById(R.id.dateSpinner);
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, daysList);
-        dataAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        datesGroup.setAdapter(dataAdapter);
 
 
-        Button mainMapsButton = (Button) findViewById(R.id.mainMapsButton);
-        mainMapsButton.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View v){
-          Intent toMapSelector = new Intent(MainActivity.this, KentFloorSelectorActivity.class);
-          startActivity(toMapSelector);
-                                              }
-                                          }
-        );
+        setListAdapter(new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textList, daysList));
 
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        // On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
-        Toast.makeText(this, item, Toast.LENGTH_SHORT).show();
-        // Showing selected spinner item
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        startActivity(new Intent(MainActivity.this, ScheduleActivity.class));
     }
-
-    public void onNothingSelected(AdapterView<?> parent) {
-        // Another interface callback
-    }
-
-
-
 }
