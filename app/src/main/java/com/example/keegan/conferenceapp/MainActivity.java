@@ -19,8 +19,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends Activity{
+public class MainActivity extends ListActivity{
 
     private TextView list;
     private List<String> listOfDays;
@@ -28,11 +29,10 @@ public class MainActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
         buildSchedules();
         list = findViewById(R.id.textList) ;
-        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(MainActivity.this, R.layout.activity_main, R.id.textList, listOfDays);
+        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textList, listOfDays);
+        setListAdapter(mAdapter);
 
 
     }
@@ -63,7 +63,12 @@ public class MainActivity extends Activity{
 
         System.out.println();
         Intent i = new Intent(MainActivity.this, ScheduleActivity.class);
-     //   i.putExtra("Date", )
+        String thingToAdd = "";
+
+        thingToAdd = listOfDays.get(position).toString();
+
+        i.putExtra("day",thingToAdd);
+
         startActivity(i);
 
         }

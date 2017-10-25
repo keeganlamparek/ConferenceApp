@@ -6,4 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.example.keegan.conferenceapp.ScheduleActivity">
 
+    <GridView
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:columnWidth="90dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
 </android.support.constraint.ConstraintLayout>
