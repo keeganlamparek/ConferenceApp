@@ -15,18 +15,20 @@ public class Map {
     }
 
     public String findMap(String buildingName, String roomName) {
-    /*if (buildingName.equals("Kent"))
-    {
-        if (roomName.equals("Carse") || roomName.equals("Principal Black Box")) ||
+        String floorType = " ";
+
+        if (buildingName.equals("Kent"))
         {
-            String floorType = "Kent First Floor";
+            if (roomName.equals("Hubbel") || roomName.equals("Student Senate"))
+            {
+                floorType = "Kent Second Floor";
+            }
         }
-        if (roomName.equals("Hubbel")) || roomName.equals("Student Senate")
+        else
         {
-            String floorType = "Kent Second Floor";
+            floorType = "Kent First Floor";
         }
-    }
-}*/
-        return ("Hi");
-    }
+     return floorType;
 }
+}
+
