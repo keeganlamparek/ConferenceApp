@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import java.util.GregorianCalendar;
 
-public class ScheduleActivity extends ListActivity {
+public class ScheduleActivity extends AppCompatActivity {
 
 
     @Override
@@ -20,8 +20,8 @@ public class ScheduleActivity extends ListActivity {
         String date = "";
         Bundle data = getIntent().getExtras();
         date = data.getString("day");
-        TextView dateText = (TextView) findViewById(R.id.dateText);
-        dateText.setText(date);
+       // TextView dateText = (TextView) findViewById(R.id.dateText);
+      //  dateText.setText(date);
 
 
 
