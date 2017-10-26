@@ -63,11 +63,11 @@ public class MainActivity extends ListActivity{
 
         System.out.println();
         Intent i = new Intent(MainActivity.this, ScheduleActivity.class);
-        String thingToAdd = "";
+        String passDay = "";
 
-        thingToAdd = listOfDays.get(position).toString();
+        passDay = listOfDays.get(position).toString();
 
-        i.putExtra("day",thingToAdd);
+        i.putExtra("day",passDay);
 
         startActivity(i);
 
