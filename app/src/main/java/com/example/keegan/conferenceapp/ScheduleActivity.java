@@ -11,6 +11,7 @@ import java.util.GregorianCalendar;
 
 public class ScheduleActivity extends AppCompatActivity {
 
+    private TimeBlock timeBlock1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,12 @@ public class ScheduleActivity extends AppCompatActivity {
         String date = "";
         Bundle data = getIntent().getExtras();
         date = data.getString("day");
-       // TextView dateText = (TextView) findViewById(R.id.dateText);
-      //  dateText.setText(date);
+        TextView dateText = (TextView) findViewById(R.id.textView);
+        TextView startView = (TextView) findViewById(R.id.startView);
+        TextView endView = (TextView) findViewById(R.id.endView);
+        dateText.setText(date);
+        startView.setText(timeBlock1.startTimeToString());
+        endView.setText(timeBlock1.endTimeToString());
 
 
 
@@ -35,7 +40,7 @@ public class ScheduleActivity extends AppCompatActivity {
 
         GregorianCalendar startTime = new GregorianCalendar(2017, 10, 13, 9, 0);
         GregorianCalendar endTime = new GregorianCalendar(2017, 10, 13, 10, 0);
-        TimeBlock timeBlock1 = new TimeBlock(startTime, endTime, 3);
+        timeBlock1 = new TimeBlock(startTime, endTime, 3);
 
 
     }

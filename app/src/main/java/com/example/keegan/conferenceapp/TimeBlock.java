@@ -28,6 +28,15 @@ public class TimeBlock {
         return maxEvents;
     }
 
+    public String startTimeToString(){
+        return this.startTime.get(GregorianCalendar.HOUR_OF_DAY) + ":" + this.startTime.get(GregorianCalendar.MINUTE) + "0";
+    }
+
+    public String endTimeToString(){
+        return this.endTime.get(GregorianCalendar.HOUR_OF_DAY) + ":" + this.endTime.get(GregorianCalendar.MINUTE) + "0";
+    }
+
+
 
     public String toString(){
         return "This time block is on goes from: " + this.startTime.toString() + " to " + this.endTime.toString() + ".";
