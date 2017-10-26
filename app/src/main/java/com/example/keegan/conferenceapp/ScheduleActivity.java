@@ -1,8 +1,10 @@
 package com.example.keegan.conferenceapp;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.GregorianCalendar;
@@ -36,5 +38,11 @@ public class ScheduleActivity extends AppCompatActivity {
         TimeBlock timeBlock1 = new TimeBlock(startTime, endTime, 3);
 
 
+    }
+
+    public void switchToEvent(View view) {
+
+        Intent i = new Intent(this, EventTest.class);
+        startActivity(i);
     }
 }

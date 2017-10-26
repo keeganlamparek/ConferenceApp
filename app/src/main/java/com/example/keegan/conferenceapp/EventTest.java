@@ -3,6 +3,7 @@ package com.example.keegan.conferenceapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.content.Intent;
 
 public class EventTest extends AppCompatActivity {
 
