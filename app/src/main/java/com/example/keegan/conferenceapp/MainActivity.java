@@ -16,12 +16,14 @@ import java.util.Objects;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends ListActivity{
+public class MainActivity extends AppCompatActivity{
 
     private TextView list;
     private List<String> listOfDays;
@@ -29,13 +31,32 @@ public class MainActivity extends ListActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         buildSchedules();
-        list = findViewById(R.id.textList) ;
-        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textList, listOfDays);
-        setListAdapter(mAdapter);
+        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listOfDays);
+        ListView listOfDays = (ListView) findViewById(R.id.daysListView);
+        listOfDays.setAdapter(mAdapter);
+        listOfDays.setOnItemClickListener(mMessageClickedHandler);
 
 
     }
+
+    private AdapterView.OnItemClickListener mMessageClickedHandler = new AdapterView.OnItemClickListener() {
+        public void onItemClick(AdapterView parent, View v, int position, long id) {
+            // Do something in response to the click
+            Intent i = new Intent(MainActivity.this, ScheduleActivity.class);
+            String passDay = "";
+
+            passDay = listOfDays.get(position).toString();
+
+            i.putExtra("day",passDay);
+
+            startActivity(i);
+
+
+
+        }
+    };
 
     private void  buildSchedules(){
 
@@ -57,11 +78,10 @@ public class MainActivity extends ListActivity{
 
     }
 
-  //  @Override
+/*  //  @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
 
 
-        System.out.println();
         Intent i = new Intent(MainActivity.this, ScheduleActivity.class);
         String passDay = "";
 
@@ -71,7 +91,7 @@ public class MainActivity extends ListActivity{
 
         startActivity(i);
 
-        }
+        }*/
 
 
 }
