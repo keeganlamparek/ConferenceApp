@@ -1,3 +1,7 @@
+// This file will take in information from the database and create all event objects from it.
+
+
+
 package com.example.keegan.conferenceapp;
 
 import android.support.v7.app.AppCompatActivity;
