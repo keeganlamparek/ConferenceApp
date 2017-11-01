@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buildSchedules();
-        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listOfDays);
+        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, R.layout.list_item_layout, listOfDays);
         ListView listOfDays = (ListView) findViewById(R.id.daysListView);
         listOfDays.setAdapter(mAdapter);
         listOfDays.setOnItemClickListener(mMessageClickedHandler);
