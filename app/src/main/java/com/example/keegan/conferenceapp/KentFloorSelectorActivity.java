@@ -14,7 +14,6 @@ public class KentFloorSelectorActivity extends AppCompatActivity {
             firstFloorButton = (Button)findViewById(R.id.firstFloorButton);
 
             firstFloorButton.setOnClickListener(new View.OnClickListener(){
-                @Override
                 public void onClick(View v) {
                     Intent toFirstFloorMap = new Intent(KentFloorSelectorActivity.this, KentFirstFloorActivity.class);
                     startActivity(toFirstFloorMap);
@@ -22,16 +21,14 @@ public class KentFloorSelectorActivity extends AppCompatActivity {
                                                 }
             );
 
-            /*secondFloorButton = (Button)findViewById(R.id.secondFloorButton);
-
+            Button secondFloorButton = (Button)findViewById(R.id.secondFloorButton);
             secondFloorButton.setOnClickListener(new View.OnClickListener(){
-                @Override
                 public void onClick(View v) {
                     Intent toSecondFloorMap = new Intent(KentFloorSelectorActivity.this, KentSecondFloorActivity.class);
                     startActivity(toSecondFloorMap);
                 }
             }
-            );*/
+            );
         }
 
 

@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -37,6 +38,17 @@ public class MainActivity extends AppCompatActivity{
         ListView listOfDays = (ListView) findViewById(R.id.daysListView);
         listOfDays.setAdapter(mAdapter);
         listOfDays.setOnItemClickListener(mMessageClickedHandler);
+
+        Button mainMapsButton = (Button)findViewById(R.id.mainMapsButton);
+        mainMapsButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v){
+              Intent toMapSelector = new Intent(MainActivity.this, KentFloorSelectorActivity.class);
+                startActivity(toMapSelector);
+            }
+
+        }
+        );
 
 
     }

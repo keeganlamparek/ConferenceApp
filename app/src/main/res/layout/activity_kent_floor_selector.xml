@@ -10,17 +10,27 @@
         android:id="@+id/firstFloorButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="102dp"
         android:contextClickable="false"
-        android:text="Kent First Floor Map"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="102dp" />
+        android:text="@string/firstFloorMapButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/secondFloorButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kent Second Floor Map"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="297dp" />
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="166dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
