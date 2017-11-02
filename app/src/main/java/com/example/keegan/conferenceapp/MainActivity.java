@@ -26,10 +26,10 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity{
 
-/*    private TextView list;
+    private TextView list;
     private List<String> listOfDays;
 
-    WelcomeScreen startWelcomeScreen = new WelcomeScreen();
+/*    WelcomeScreen startWelcomeScreen = new WelcomeScreen();
     startWelcomeScreen.onCreateDialog();*/
 
 
