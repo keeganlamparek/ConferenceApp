@@ -10,4 +10,5 @@
     <string name="mapsMainButton">Maps</string>
     <string name="firstFloorMapButton">First Floor Kent Map</string>
     <string name="secondFloorMapButton">Second Floor Kent Map</string>
+    <string name="welcome_screen_text">Welcome Default Text</string>
 </resources>
