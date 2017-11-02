@@ -10,6 +10,7 @@ import android.view.View;
  * Created by matt.sebek on 10/31/2017.
  */
 
+/*
 public class WelcomeScreen extends DialogFragment {
 
     public View onCreateView(LayoutInflater inflater, View view, Bundle savedInstanceState) {
@@ -19,3 +20,4 @@ public class WelcomeScreen extends DialogFragment {
 
 
 }
+*/

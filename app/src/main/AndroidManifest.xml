@@ -18,10 +18,24 @@
         </activity>
         <activity android:name=".KentSecondFloorActivity" />
         <activity android:name=".KentFirstFloorActivity" />
-        <activity android:name=".KentFloorSelectorActivity"></activity>
-        <activity android:name=".ScheduleActivity"></activity>
-        <activity android:name=".EventTest"></activity>
+        <activity android:name=".KentFloorSelectorActivity" />
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".EventTest" />
+        <activity
+            android:name=".DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.keegan.conferenceapp.MainActivity" />
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity{
 
     private TextView list;
     private List<String> listOfDays;
+    private String[] arrayOfMenuStrings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity{
         ListView listOfDays = (ListView) findViewById(R.id.daysListView);
         listOfDays.setAdapter(mAdapter);
         listOfDays.setOnItemClickListener(mMessageClickedHandler);
+
+        arrayOfMenuStrings = getResources().getStringArray(R.array.arrayOfMenuStrings);
+
 
 
     }
