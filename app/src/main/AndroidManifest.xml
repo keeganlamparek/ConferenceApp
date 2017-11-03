@@ -21,6 +21,7 @@
         <activity android:name=".KentFloorSelectorActivity"></activity>
         <activity android:name=".ScheduleActivity"></activity>
         <activity android:name=".EventTest"></activity>
+        <activity android:name=".WelcomeScreen"></activity>
 
     </application>
 

@@ -24,19 +24,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
 
+
 public class MainActivity extends AppCompatActivity{
 
     private TextView list;
     private List<String> listOfDays;
 
-/*    WelcomeScreen startWelcomeScreen = new WelcomeScreen();
-    startWelcomeScreen.onCreateDialog();*/
+
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startWelcomeScreen();
         buildSchedules();
         ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, R.layout.list_item_layout, listOfDays);
         ListView listOfDays = (ListView) findViewById(R.id.daysListView);
@@ -108,6 +111,17 @@ public class MainActivity extends AppCompatActivity{
         startActivity(i);
 
         }*/
+
+    private void startWelcomeScreen() {
+
+        Intent startWelcomeScreen = new Intent(this, WelcomeScreen.class);
+        WelcomeScreen welcome = new WelcomeScreen();
+
+        if (!welcome.hasRun()){
+            startActivity(startWelcomeScreen);
+
+        }
+    }
 
 
 }

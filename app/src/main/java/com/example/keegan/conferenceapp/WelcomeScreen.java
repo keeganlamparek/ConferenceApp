@@ -1,49 +1,53 @@
 package com.example.keegan.conferenceapp;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.os.Handler;
+import android.view.Menu;
+import android.content.Intent;
+
+
 
 
 /**
  * Created by matt.sebek on 10/31/2017.
  */
 
-/*public class WelcomeScreen extends DialogFragment {
+import android.app.Activity;
 
-    View view;
 
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(gerActivity());
-        LayoutInflater inflater = getActivity().getLayoutInflater();
 
-        builder.setView(inflater.inflate(R.layout.welcome_screen, null));
-        return builder.create();
+
+public class WelcomeScreen extends Activity {
+
+    /** Duration of wait **/
+    final int SPLASH_DISPLAY_LENGTH = 5000;
+    private static boolean firstRun = false;
+
+
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        setContentView(R.layout.welcome_screen);
+
+        /* New Handler to start the MainActivity
+         * and close this WelcomeScreen after some seconds.*/
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+                /* Create an Intent that will start the MainActivity. */
+                firstRun = true;
+                Intent mainIntent = new Intent(WelcomeScreen.this, MainActivity.class);
+                WelcomeScreen.this.startActivity(mainIntent);
+                WelcomeScreen.this.finish();
+            }
+        }, SPLASH_DISPLAY_LENGTH);
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup view, Bundle savedInstanceState) {
-
-        return inflater.inflate(R.layout.welcome_screen, view, false);
+    public boolean hasRun() {
+        return firstRun;
     }
 
-    public void onClick(View view) {
-        dismiss();
-    }
 
-    public void showDialog() {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        CustomDialogFragment newFragment = new CustomDialogFragment();
-
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        transaction.add(android.R.id.content, newFragment)
-                .addToBackStack(null).commit();
-    }
 }
-}*/
