@@ -1,39 +1,21 @@
 package com.example.keegan.conferenceapp;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import java.io.Serializable;
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Objects;
-
-import android.app.Activity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity{
 
-    private TextView list;
     private List<String> listOfDays;
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,20 +79,6 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
-/*  //  @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-
-
-        Intent i = new Intent(MainActivity.this, ScheduleActivity.class);
-        String passDay = "";
-
-        passDay = listOfDays.get(position).toString();
-
-        i.putExtra("day",passDay);
-
-        startActivity(i);
-
-        }*/
 
     private void startWelcomeScreen() {
 
