@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Button;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class MainActivity extends AppCompatActivity{
 
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity{
 
     private void  buildSchedules(){
 
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
         // Build Days
         GregorianCalendar day1 = new GregorianCalendar(2017, 10, 12);
         GregorianCalendar day2 = new GregorianCalendar(2017, 10, 13);
@@ -75,8 +79,6 @@ public class MainActivity extends AppCompatActivity{
         listOfDays = new ArrayList<String>();
         listOfDays.add(schedule1.toString());
         listOfDays.add(schedule2.toString());
-
-
     }
 
 
