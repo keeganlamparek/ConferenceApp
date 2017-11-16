@@ -14,7 +14,7 @@ public class Event {
     private String[] event_presenters;
     private String event_buildingName;
     private String event_roomName;
-    private String YearID;
+    private String yearID;
     private String event_statusDescription;
     private String event_statusNotes;
 
@@ -27,7 +27,7 @@ public class Event {
         this.event_presenters = event_presenters;
         this.event_buildingName = event_buildingName;
         this.event_roomName = event_roomName;
-        this.YearID = yearID;
+        this.yearID = yearID;
         this.event_statusDescription = event_statusDescription;
         this.event_statusNotes = event_statusNotes;
     }
@@ -44,7 +44,7 @@ public class Event {
         String return_string = "";
         int num_track = 0;
 
-        if (event_presenters.length >= 1) {
+        if (event_trackDescription.length >= 1) {
             return_string += event_trackDescription[0];
             num_track += 1;
         }
