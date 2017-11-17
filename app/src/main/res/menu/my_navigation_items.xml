@@ -5,11 +5,19 @@
         <item
             android:id="@+id/schedule_menu"
             android:icon="@drawable/ic_schedule"
-            android:title="@string/schedule" />
+            android:title="@string/schedule"
+            />
         <item
             android:id="@+id/maps_menu"
             android:icon="@drawable/ic_map"
-            android:title="@string/maps" />
+            android:title="@string/maps"
+            />
+
+        <item
+            android:id="@+id/sponsors_menu"
+            android:icon="@drawable/ic_sponsors"
+            android:title="@string/sponsors"
+            />
 
     </group>
 
