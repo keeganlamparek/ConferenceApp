@@ -6,6 +6,8 @@ package com.example.keegan.conferenceapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -45,6 +47,14 @@ public class EventTest extends AppCompatActivity {
 
         final TextView event_roomName = (TextView) findViewById(R.id.event_roomName);
         event_roomName.setText(testEvent1.get_event_roomName());
+
+        final Button mapsButton = (Button) findViewById(R.id.toMap);
+        mapsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intent = new Intent(EventTest.this, KentFirstFloorActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
