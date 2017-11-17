@@ -1,8 +1,5 @@
 package com.example.keegan.conferenceapp;
-
-import java.util.ArrayList;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 /**
  * Created by Keegan on 9/21/2017.
@@ -10,21 +7,12 @@ import java.util.List;
 
 public class Schedule {
 
-    private List<TimeBlock> timeBlockList;
+
     private GregorianCalendar day;
-    private int amountOfTimeBlocks = 0;
 
     public Schedule(GregorianCalendar day){
         this.day = day;
-        this.amountOfTimeBlocks++;
     }
-
-    public String[] contains(){
-        String[] containsTimeBlocks = new String[amountOfTimeBlocks];
-
-        return containsTimeBlocks;
-    }
-
 
     @Override
     public String toString() {
