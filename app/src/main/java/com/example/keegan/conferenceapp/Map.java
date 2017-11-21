@@ -9,24 +9,27 @@ public class Map {
     private String buildingName;
 
 
-    public Map(String eventRoom, int roomNumber, String buildingName) {
+    public Map(String roomName, String buildingName) {
         this.roomName = roomName;
         this.buildingName = buildingName;
     }
 
-    public String findMap(String buildingName, String roomName) {
-    /*if (buildingName.equals("Kent"))
+    public Class findMap() {
+
+        Class mapAcitiviy = KentSecondFloorActivity.class;
+
+    if (buildingName.equals("Kent"))
     {
-        if (roomName.equals("Carse") || roomName.equals("Principal Black Box")) ||
+        if (roomName.equals("Carse") || roomName.equals("Principal Black Box"))
         {
-            String floorType = "Kent First Floor";
+            mapAcitiviy = KentFirstFloorActivity.class;
         }
-        if (roomName.equals("Hubbel")) || roomName.equals("Student Senate")
+        if (roomName.equals("Hubbel") || roomName.equals("Student Senate"))
         {
-            String floorType = "Kent Second Floor";
+            mapAcitiviy = KentSecondFloorActivity.class;
         }
     }
-}*/
-        return ("Hi");
+
+        return (mapAcitiviy);
     }
 }
