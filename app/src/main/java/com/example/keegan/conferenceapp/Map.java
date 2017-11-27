@@ -7,11 +7,15 @@ public class Map {
 
     private String roomName;
     private String buildingName;
+    private int mapDrawableId;
+
+
 
 
     public Map(String roomName, String buildingName) {
         this.roomName = roomName;
         this.buildingName = buildingName;
+
     }
 
     public Class findMap() {
@@ -32,4 +36,5 @@ public class Map {
 
         return (mapAcitiviy);
     }
+
 }

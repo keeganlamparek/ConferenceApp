@@ -7,9 +7,9 @@
     <string name="event_buildingName">Event Building Name Default String</string>
     <string name="event_roomName">Event Room Name Default String</string>
     <string name="event_track_description">Event Track Description Default Name</string>
-    <string name="mapsMainButton">Maps</string>
-    <string name="firstFloorMapButton">First Floor Kent Map</string>
-    <string name="secondFloorMapButton">Second Floor Kent Map</string>
+    <string name="mapsMainTitle">Maps</string>
+    <string name="firstFloorMapTitle">First Floor Kent Map</string>
+    <string name="secondFloorMapTitle">Second Floor Kent Map</string>
     <string name="welcome_screen_text">Welcome Default Text</string>
     <string name="schedule">Schedule</string>
     <string name="maps">Maps</string>
