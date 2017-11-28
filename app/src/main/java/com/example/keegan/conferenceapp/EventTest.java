@@ -28,7 +28,7 @@ public class EventTest extends AppCompatActivity {
         event1_presenters[0] = "Wallace";
         event1_presenters[1] = "Dan";
 
-        Event testEvent1 = new Event(1, "Test event title", "This is a test for event", "This is a long test description for a text field.", event1_track, event1_presenters, "Kent", "Principal Black Box", "2017", "Presenting", "Group presenting now");
+        Event testEvent1 = new Event(1, "Building Software", "This is a test for event", "This presentation will look into how to build software that will last.  When making software, always build with longeviy and ease of use in mind.  This presentation should make anyone's code last far longer than what it would originaly.", event1_track, event1_presenters, "Kent", "Principal Black Box", "2017", "Presenting", "Group presenting now");
 
         final TextView event_title = (TextView) findViewById(R.id.event_title);
         event_title.setText(testEvent1.get_event_title());

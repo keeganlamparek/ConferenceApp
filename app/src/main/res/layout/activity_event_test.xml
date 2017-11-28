@@ -7,23 +7,35 @@
     tools:context="com.example.keegan.conferenceapp.EventTest">
 
     <TextView
+        android:id="@+id/event_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="@string/event_title"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+         />
+
+    <TextView
         android:id="@+id/event_long_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/font_size"
         android:text="@string/event_long_description"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="8dp"
-        app:layout_constraintVertical_bias="0.108"
-        app:layout_constraintHorizontal_bias="0.0" />
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/event_title"
+        app:layout_constraintTop_toBottomOf="@+id/event_title"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1" />
 
     <TextView
         android:id="@+id/presenters"
@@ -31,26 +43,14 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/font_size"
         android:text="@string/event_presenters"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/event_long_description"
+        app:layout_constraintTop_toBottomOf="@+id/event_long_description"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="16dp" />
-
-    <TextView
-        android:id="@+id/event_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="@string/event_title"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="8dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="8dp" />
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/event_buildingName"
@@ -58,13 +58,14 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/font_size"
         android:text="@string/event_buildingName"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/presenters"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/presenters"
+        app:layout_constraintLeft_toLeftOf="@+id/presenters"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/event_roomName"
@@ -72,12 +73,14 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/font_size"
         android:text="@string/event_roomName"
-        tools:layout_constraintTop_creator="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintTop_toBottomOf="@+id/event_buildingName"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/event_buildingName"
-        android:layout_marginLeft="-14dp"
-        android:layout_marginTop="24dp" />
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/event_track_description"
@@ -85,12 +88,14 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/font_size"
         android:text="@string/event_track_description"
-        tools:layout_constraintTop_creator="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="0dp"
         app:layout_constraintTop_toBottomOf="@+id/event_roomName"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/event_roomName"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="24dp" />
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/toMap"
