@@ -9,7 +9,7 @@ public class MapImgActivity extends AppCompatActivity {
     //Toolbar mToolbar;
     ImageView map;
     int position;
-    int[] mapArray = {R.drawable.kent_first_floor, R.drawable.kent_second_floor};
+    int[] mapImageArray = {R.drawable.kent_first_floor, R.drawable.kent_second_floor};
 
 
     protected void onCreate(Bundle savedInstanceState){
@@ -17,12 +17,12 @@ public class MapImgActivity extends AppCompatActivity {
         setContentView(R.layout.activity_map_img);
 
         //mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        map = (ImageView) findViewById(R.id.imageView);
+        map = (ImageView) findViewById(R.id.mapReciever);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
-            position = bundle.getInt("mapArray");
-            map.setImageResource(mapArray[position]);
+            position = bundle.getInt("mapImage");
+            map.setImageResource(mapImageArray[position]);
 
         }
     }

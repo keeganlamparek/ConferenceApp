@@ -14,4 +14,8 @@
     <string name="schedule">Schedule</string>
     <string name="maps">Maps</string>
     <string name="sponsors">Sponsors</string>
+    <string-array name="mapNames">
+        <item>Kent First Floor</item>
+        <item>Kent Second Floor</item>
+    </string-array>
 </resources>
