@@ -10,6 +10,7 @@
     android:layout_marginRight="5dp"
     android:layout_marginStart="5dp"
     android:layout_marginTop="5dp"
+    android:filterTouchesWhenObscured="false"
     android:gravity="center"
     android:padding="10dp"
     android:textAlignment="gravity"

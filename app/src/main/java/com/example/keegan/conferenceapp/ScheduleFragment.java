@@ -1,4 +1,4 @@
-package layout;
+package com.example.keegan.conferenceapp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,12 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
-import com.example.keegan.conferenceapp.KentFloorSelectorActivity;
-import com.example.keegan.conferenceapp.MainActivity;
-import com.example.keegan.conferenceapp.R;
-import com.example.keegan.conferenceapp.Schedule;
-import com.example.keegan.conferenceapp.ScheduleActivity;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -84,12 +78,12 @@ public class ScheduleFragment extends Fragment {
 
         buildSchedules();
         ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this.getActivity() , R.layout.list_item_layout, listOfDays);
-        ListView listOfDays = (ListView) view.findViewById(R.id.fragmentScheduleList);
+        ListView listOfDays = view.findViewById(R.id.fragmentScheduleList);
         listOfDays.setAdapter(mAdapter);
         listOfDays.setOnItemClickListener(mMessageClickedHandler);
 
 
-        Button mainMapsButton = (Button) view.findViewById(R.id.mapsButton);
+        Button mainMapsButton = view.findViewById(R.id.mapsButton);
         mainMapsButton.setOnClickListener(new View.OnClickListener()
                                           {
                                               public void onClick(View v){
