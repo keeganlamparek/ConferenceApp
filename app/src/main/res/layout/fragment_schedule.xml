@@ -18,19 +18,20 @@
             android:id="@+id/linearLayout2"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             app:layout_constraintLeft_toLeftOf="parent">
 
             <ListView
+                android:id="@+id/fragmentScheduleList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/mapsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="148dp"
+            android:layout_marginStart="148dp"
             android:layout_marginTop="126dp"
             android:text="@string/mapsMainButton"
             app:layout_constraintLeft_toLeftOf="parent"
