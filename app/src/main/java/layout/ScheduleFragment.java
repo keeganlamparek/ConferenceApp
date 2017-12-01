@@ -1,14 +1,27 @@
 package layout;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 
+import com.example.keegan.conferenceapp.KentFloorSelectorActivity;
+import com.example.keegan.conferenceapp.MainActivity;
 import com.example.keegan.conferenceapp.R;
+import com.example.keegan.conferenceapp.Schedule;
+import com.example.keegan.conferenceapp.ScheduleActivity;
+
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +40,8 @@ public class ScheduleFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private List<String> listOfDays;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,8 +80,44 @@ public class ScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule, container, false);
+        View view = inflater.inflate(R.layout.fragment_schedule, container, false);
+
+        buildSchedules();
+        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this.getActivity() , R.layout.list_item_layout, listOfDays);
+        ListView listOfDays = (ListView) view.findViewById(R.id.fragmentScheduleList);
+        listOfDays.setAdapter(mAdapter);
+        listOfDays.setOnItemClickListener(mMessageClickedHandler);
+
+
+        Button mainMapsButton = (Button) view.findViewById(R.id.mapsButton);
+        mainMapsButton.setOnClickListener(new View.OnClickListener()
+                                          {
+                                              public void onClick(View v){
+                                                  Intent toMapSelector = new Intent(getContext(), KentFloorSelectorActivity.class);
+                                                  startActivity(toMapSelector);
+                                              }
+                                          }
+        );
+
+        return view;
     }
+
+    private AdapterView.OnItemClickListener mMessageClickedHandler = new AdapterView.OnItemClickListener() {
+        public void onItemClick(AdapterView parent, View v, int position, long id) {
+            // Do something in response to the click
+            Intent i = new Intent(getContext(), ScheduleActivity.class);
+            String passDay = "";
+
+            passDay = listOfDays.get(position).toString();
+
+            i.putExtra("day",passDay);
+
+            startActivity(i);
+
+
+
+        }
+    };
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -91,6 +142,25 @@ public class ScheduleFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+    private void  buildSchedules(){
+
+        // Build Days
+        GregorianCalendar day1 = new GregorianCalendar(2017, 10, 12);
+        GregorianCalendar day2 = new GregorianCalendar(2017, 10, 13);
+
+        // Build start/end time arguments for Timeblock class
+        GregorianCalendar startTime1 = new GregorianCalendar(2017, 10, 12);
+        GregorianCalendar startTime2 = new GregorianCalendar(2017, 10, 13);
+
+        Schedule schedule1 = new Schedule(day1);
+        Schedule schedule2 = new Schedule(day2);
+
+        listOfDays = new ArrayList<String>();
+        listOfDays.add(schedule1.toString());
+        listOfDays.add(schedule2.toString());
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this
