@@ -23,6 +23,10 @@
         <activity android:name=".EventTest" />
         <activity android:name=".WelcomeScreen" />
         <activity android:name=".MapImgActivity"></activity>
+        <activity android:name=".SponsorActivity"></activity>
+
+
     </application>
+
 
 </manifest>

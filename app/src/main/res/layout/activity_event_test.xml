@@ -120,5 +120,15 @@
                 tools:layout_constraintRight_creator="1"
                 tools:layout_constraintBottom_creator="1" />
 
+            <Button
+                android:id="@+id/toSponsor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To Sponsors"
+                app:layout_constraintTop_toTopOf="@+id/toMap"
+                app:layout_constraintLeft_toRightOf="@+id/toMap"
+
+                />
+
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

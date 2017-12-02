@@ -59,5 +59,14 @@ public class EventTest extends AppCompatActivity {
             }
         });
 
+        // For testing sponsors page only
+        final Button sponsorButton = (Button) findViewById(R.id.toSponsor);
+        sponsorButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intent = new Intent(EventTest.this, SponsorActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

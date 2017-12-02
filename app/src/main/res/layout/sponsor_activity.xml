@@ -1,39 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/sponsorcourseleaf"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:srcCompat="@drawable/sponsorcourseleaf"
-        app:layout_constraintRight_toLeftOf="@+id/sponsorferrilli"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/sponsorferrilli"
-        android:layout_marginEnd="19dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sponsorferrilli"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintVertical_bias="0.0" />
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/sponsorferrilli"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/sponsorferrilli"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="444dp" />
-</android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/sponsorstitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sponsors"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorferrilli"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:srcCompat="@drawable/sponsorferrilli"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorstitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/sponsorcourseleaf"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorcourseleaf"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginStart="@dimen/sponsor_horizontal_margin"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:srcCompat="@drawable/sponsorcourseleaf"
+            app:layout_constraintLeft_toRightOf="@+id/sponsorferrilli"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorstitle"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorportalguard"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:srcCompat="@drawable/sponsorportalguard"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorferrilli"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/sponsorsoftdocs"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorsoftdocs"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginStart="@dimen/sponsor_horizontal_margin"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:srcCompat="@drawable/sponsorsoftdocs"
+            app:layout_constraintLeft_toRightOf="@+id/sponsorportalguard"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorcourseleaf"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="ContentDescription"
+            />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorasranalytics"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/sponsornationalstudentclearinghouse"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorportalguard"
+            app:srcCompat="@drawable/sponsorasranalystics"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsornationalstudentclearinghouse"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginStart="@dimen/sponsor_horizontal_margin"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toRightOf="@+id/sponsorasranalytics"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorsoftdocs"
+            app:srcCompat="@drawable/sponsornationalstudentclearinghouse"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsoraciuniversalpayments"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/sponsorentrinsik"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorasranalytics"
+            app:srcCompat="@drawable/sponsoraciuniversalpayments"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorentrinsik"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginStart="@dimen/sponsor_horizontal_margin"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toRightOf="@+id/sponsoraciuniversalpayments"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sponsornationalstudentclearinghouse"
+            app:srcCompat="@drawable/sponsorentrinsik"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsortrimdatacorp"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/sponsortarget"
+            app:layout_constraintTop_toBottomOf="@+id/sponsoraciuniversalpayments"
+            app:srcCompat="@drawable/sponsortrimdatacorp"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsortarget"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginStart="@dimen/sponsor_horizontal_margin"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toRightOf="@+id/sponsortrimdatacorp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorentrinsik"
+            app:srcCompat="@drawable/sponsortarget"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorellucian"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/sponsorshamrocksolutions"
+            app:layout_constraintTop_toBottomOf="@+id/sponsortrimdatacorp"
+            app:srcCompat="@drawable/sponsorellucian"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorshamrocksolutions"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginStart="@dimen/sponsor_horizontal_margin"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toRightOf="@+id/sponsorellucian"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sponsortarget"
+            app:srcCompat="@drawable/sponsorshamrocksolutions"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsoraxiomelite"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/sponsorjadu"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorellucian"
+            app:srcCompat="@drawable/sponsoraxiom"
+            tools:ignore="ContentDescription" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/sponsorjadu"
+            android:layout_width="@dimen/sponsor_image_width"
+            android:layout_height="@dimen/sponsor_image_height"
+            android:layout_marginStart="@dimen/sponsor_horizontal_margin"
+            android:layout_marginTop="@dimen/sponsor_vertical_margin"
+            app:layout_constraintLeft_toRightOf="@+id/sponsoraxiomelite"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sponsorshamrocksolutions"
+            app:srcCompat="@drawable/sponsorjadu"
+            tools:ignore="ContentDescription" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
