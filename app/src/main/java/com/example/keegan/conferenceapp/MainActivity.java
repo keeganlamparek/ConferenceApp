@@ -18,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity{
 
     private List<String> listOfDays;
+    GregorianCalendar[][] eventsOnDay1;
+    GregorianCalendar[][] eventsOnDay2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity{
         ListView listOfDays = (ListView) findViewById(R.id.daysListView);
         listOfDays.setAdapter(mAdapter);
         listOfDays.setOnItemClickListener(mMessageClickedHandler);
+
 
         Button mainMapsButton = (Button)findViewById(R.id.mainMapsButton);
         mainMapsButton.setOnClickListener(new View.OnClickListener()
@@ -69,9 +72,17 @@ public class MainActivity extends AppCompatActivity{
         GregorianCalendar day1 = new GregorianCalendar(2017, 10, 12);
         GregorianCalendar day2 = new GregorianCalendar(2017, 10, 13);
 
-        // Build start/end time arguments for Timeblock class
-        GregorianCalendar startTime1 = new GregorianCalendar(2017, 10, 12);
-        GregorianCalendar startTime2 = new GregorianCalendar(2017, 10, 13);
+        // Build start/end time arguments for TimeBlock class
+        // Start times are first row.  End times are in second row.
+        // Columns seperates events.
+        eventsOnDay1[0][0] = new GregorianCalendar(2017, 10, 12, 9, 0);
+        eventsOnDay1[1][0] = new GregorianCalendar(2017, 10, 12, 10, 0);
+
+        eventsOnDay2[0][0] = new GregorianCalendar(2017, 10, 13, 9, 0);
+        eventsOnDay2[1][0] = new GregorianCalendar(2017, 10, 13, 10, 0);
+
+        eventsOnDay2[0][1] = new GregorianCalendar(2017, 10, 13, 10, 0);
+        eventsOnDay2[1][1] = new GregorianCalendar(2017, 10, 13, 11, 0);
 
         Schedule schedule1 = new Schedule(day1);
         Schedule schedule2 = new Schedule(day2);
@@ -79,6 +90,14 @@ public class MainActivity extends AppCompatActivity{
         listOfDays = new ArrayList<String>();
         listOfDays.add(schedule1.toString());
         listOfDays.add(schedule2.toString());
+    }
+
+    public GregorianCalendar[][] getEventsOnDay1() {
+        return eventsOnDay1;
+    }
+
+    public GregorianCalendar[][] getEventsOnDay2() {
+        return eventsOnDay2;
     }
 
 
