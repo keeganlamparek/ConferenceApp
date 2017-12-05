@@ -20,10 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Button;
-import layout.ScheduleFragment;
 
 
 public class MainActivity extends AppCompatActivity
@@ -37,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.navigation_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        startWelcomeScreen();
+     //   startWelcomeScreen();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_main, new HomeFragment());
         transaction.commit();
