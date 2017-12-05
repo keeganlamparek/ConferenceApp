@@ -34,7 +34,7 @@ public class TimeBlock {
 
 
     public String toString(){
-        return "This time block is on goes from: " + this.startTime.toString() + " to " + this.endTime.toString() + ".";
+        return "This time block goes from: " + this.startTime.toString() + " to " + this.endTime.toString() + ".";
     }
 
 }

@@ -6,4 +6,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
+
+    <!-- Sponsor margins and dimensions. -->
+    <dimen name="sponsor_horizontal_margin">16dp</dimen>
+    <dimen name="sponsor_vertical_margin">16dp</dimen>
+    <dimen name="sponsor_image_width">144dp</dimen>
+    <dimen name="sponsor_image_height">128dp</dimen>
 </resources>

@@ -41,7 +41,7 @@ public class Event {
     }
 
     public String get_event_tracks() {
-        String return_string = "";
+        String return_string = "Event tracks: \n";
         int num_track = 0;
 
         if (event_trackDescription.length >= 1) {
@@ -60,7 +60,7 @@ public class Event {
     }
 
     public String get_event_presenters() {
-        String return_string = "";
+        String return_string = "Presented by: \n";
         int num_presenters = 0;
 
         if (event_presenters.length >= 1) {
@@ -78,11 +78,24 @@ public class Event {
         return return_string;
     }
 
+    // These are for presenting the information to the user
     public String get_event_buildingName() {
-        return this.event_buildingName;
+        String returnString = "Building name: \n" + this.event_buildingName;
+        return returnString;
     }
 
     public String get_event_roomName() {
+        String returnString = "Room: \n" + this.event_roomName;
+        return returnString;
+    }
+
+
+    // These lower two are for finding the maps
+    public String get_event_buildingName_for_map() {
+        return this.event_buildingName;
+    }
+
+    public String get_event_roomName_for_map() {
         return this.event_roomName;
     }
 

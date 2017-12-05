@@ -18,11 +18,15 @@
         </activity>
         <activity android:name=".KentSecondFloorActivity" />
         <activity android:name=".KentFirstFloorActivity" />
-        <activity android:name=".KentFloorSelectorActivity"></activity>
-        <activity android:name=".ScheduleActivity"></activity>
-        <activity android:name=".EventTest"></activity>
-        <activity android:name=".WelcomeScreen"></activity>
+        <activity android:name=".KentFloorSelectorActivity" />
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".EventTest" />
+        <activity android:name=".WelcomeScreen" />
+        <activity android:name=".MapImgActivity"></activity>
+        <activity android:name=".SponsorActivity"></activity>
+
 
     </application>
+
 
 </manifest>
