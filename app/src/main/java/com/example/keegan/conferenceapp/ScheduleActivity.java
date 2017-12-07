@@ -40,7 +40,7 @@ public class ScheduleActivity extends AppCompatActivity {
 
         GregorianCalendar startTime = new GregorianCalendar(2017, 10, 13, 9, 0);
         GregorianCalendar endTime = new GregorianCalendar(2017, 10, 13, 10, 0);
-        timeBlock1 = new TimeBlock(startTime, endTime, 3);
+        timeBlock1 = new TimeBlock(startTime, endTime);
 
 
     }

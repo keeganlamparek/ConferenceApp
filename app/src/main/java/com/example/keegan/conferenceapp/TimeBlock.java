@@ -10,25 +10,48 @@ public class TimeBlock {
 
     private GregorianCalendar startTime;
     private GregorianCalendar endTime;
-    private int maxEvents;
 
-    public TimeBlock(GregorianCalendar startTime, GregorianCalendar endTime, int maxEvents) {
-        this.maxEvents = maxEvents;
+    public TimeBlock(GregorianCalendar startTime, GregorianCalendar endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
 
     }
 
-    public int getMaxEvents(){
-        return maxEvents;
-    }
 
     public String startTimeToString(){
-        return this.startTime.get(GregorianCalendar.HOUR_OF_DAY) + ":" + this.startTime.get(GregorianCalendar.MINUTE) + "0";
+
+        String hourString = "";
+        String minuteString = "";
+
+        int hour = this.startTime.get(GregorianCalendar.HOUR_OF_DAY);
+        int minute = this.startTime.get(GregorianCalendar.MINUTE);
+        hourString = "" + hour;
+
+        if (minute < 9){
+            minuteString = "0" + minute;
+        }
+        else
+            minuteString = "" + minute;
+
+        return hourString + ":" + minuteString;
     }
 
     public String endTimeToString(){
-        return this.endTime.get(GregorianCalendar.HOUR_OF_DAY) + ":" + this.endTime.get(GregorianCalendar.MINUTE) + "0";
+
+        String hourString = "";
+        String minuteString = "";
+
+        int hour = this.endTime.get(GregorianCalendar.HOUR_OF_DAY);
+        int minute = this.endTime.get(GregorianCalendar.MINUTE);
+        hourString = "" + hour;
+
+        if (minute < 9){
+            minuteString = "0" + minute;
+        }
+        else
+            minuteString = "" + minute;
+
+        return hourString + ":" + minuteString;
     }
 
 

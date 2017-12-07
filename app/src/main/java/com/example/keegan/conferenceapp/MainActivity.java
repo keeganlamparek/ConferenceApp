@@ -29,7 +29,7 @@ import android.widget.Toast;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, ScheduleFragment.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, ScheduleFragment.OnFragmentInteractionListener, TimeBlockFragment.OnFragmentInteractionListener{
 
     private List<String> listOfDays;
     static GregorianCalendar[][] eventsOnDay1 = new GregorianCalendar[1][5];

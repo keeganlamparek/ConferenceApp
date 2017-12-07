@@ -7,7 +7,7 @@ import android.widget.ImageView;
 public class MapImgActivity extends AppCompatActivity {
     ImageView map;
     int position;
-    int[] mapImageArray = {R.drawable.kent_first_floor, R.drawable.kent_second_floor, R.drawable.simpson_college_campus_map, R.drawable.simpson_parking_map};
+ //   int[] mapImageArray = {R.drawable.kent_first_floor, R.drawable.kent_second_floor, R.drawable.simpson_college_campus_map, R.drawable.simpson_parking_map};
 
 
     protected void onCreate(Bundle savedInstanceState){
@@ -19,7 +19,7 @@ public class MapImgActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
             position = bundle.getInt("mapImage");
-            map.setImageResource(mapImageArray[position]);
+        //    map.setImageResource(mapImageArray[position]);
 
         }
     }

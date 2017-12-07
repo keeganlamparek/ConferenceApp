@@ -4,9 +4,16 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 
 /**
@@ -22,6 +29,7 @@ public class TimeBlockFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private List timeBlocks = new ArrayList<TimeBlock>();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -64,7 +72,46 @@ public class TimeBlockFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_time_block, container, false);
+        View view = inflater.inflate(R.layout.fragment_time_block, container, false);
+
+        createTimeBlocks();
+
+        ListView timeBlockListView = (ListView) view.findViewById(R.id.timeBlockList);
+        TimeBlockAdapter timeBlockAdapter = new TimeBlockAdapter(this.getActivity(), timeBlocks);
+
+        timeBlockListView.setAdapter(timeBlockAdapter);
+
+        timeBlockListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });
+
+
+        return view;
+    }
+
+    private void createTimeBlocks(){
+
+        GregorianCalendar startTime1 = new GregorianCalendar(2017, 10, 13, 9, 0);
+        GregorianCalendar endTime1 = new GregorianCalendar(2017, 10, 13, 10, 0);
+
+        GregorianCalendar startTime2 = new GregorianCalendar(2017, 10, 13, 10, 15);
+        GregorianCalendar endTime2 = new GregorianCalendar(2017, 10, 13, 11, 15);
+
+        GregorianCalendar startTime3 = new GregorianCalendar(2017, 10, 13, 11, 30);
+        GregorianCalendar endTime3 = new GregorianCalendar(2017, 10, 13, 12, 5);
+
+        TimeBlock timeBlock1 = new TimeBlock(startTime1, endTime1);
+        TimeBlock timeBlock2 = new TimeBlock(startTime2, endTime2);
+        TimeBlock timeBlock3= new TimeBlock(startTime3, endTime3);
+
+        timeBlocks.add(timeBlock1);
+        timeBlocks.add(timeBlock2);
+        timeBlocks.add(timeBlock3);
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
