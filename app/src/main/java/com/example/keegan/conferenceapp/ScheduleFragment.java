@@ -87,7 +87,7 @@ public class ScheduleFragment extends Fragment {
         mainMapsButton.setOnClickListener(new View.OnClickListener()
                                           {
                                               public void onClick(View v){
-                                                  Intent toMapSelector = new Intent(getContext(), KentFloorSelectorActivity.class);
+                                                  Intent toMapSelector = new Intent(getContext(), MapSelectorActivity.class);
                                                   startActivity(toMapSelector);
                                               }
                                           }

@@ -23,5 +23,7 @@
     <string-array name="mapNames">
         <item>Kent First Floor</item>
         <item>Kent Second Floor</item>
+        <item>Simpson College Campus Map</item>
+        <item>Simpson Guest Parking Map</item>
     </string-array>
 </resources>

@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity
         mainMapsButton.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v){
-              Intent toMapSelector = new Intent(MainActivity.this, KentFloorSelectorActivity.class);
+              Intent toMapSelector = new Intent(MainActivity.this, MapSelectorActivity.class);
                 startActivity(toMapSelector);
             }
 

@@ -16,9 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".KentSecondFloorActivity" />
-        <activity android:name=".KentFirstFloorActivity" />
-        <activity android:name=".KentFloorSelectorActivity" />
+        <activity android:name=".MapSelectorActivity" />
         <activity android:name=".ScheduleActivity" />
         <activity android:name=".EventTest" />
         <activity android:name=".WelcomeScreen" />
