@@ -29,18 +29,21 @@ public class Map {
         if (roomName.equals("Carse") || roomName.equals("Principal Black Box"))
         {
             int mapResource = R.drawable.kent_first_floor;
+            //int mapResource = 0
+
             //mapAcitiviy = MapImgActivity.class;
 
-            outputMapValue = mapResource;
+            //outputMapValue = mapResource;
 
         }
         if (roomName.equals("Hubbel") || roomName.equals("Student Senate"))
         {
-            int mapResource = R.drawable.kent_second_floor;
+           int mapResource = R.drawable.kent_second_floor;
+            //int mapResource = 1
 
            // mapAcitiviy = MapImgActivity.class;
 
-            outputMapValue = mapResource;
+           // outputMapValue = mapResource;
 
         }
     }

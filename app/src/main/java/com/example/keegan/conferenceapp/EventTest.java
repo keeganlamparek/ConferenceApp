@@ -7,14 +7,18 @@ package com.example.keegan.conferenceapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.content.Intent;
 
+import java.util.List;
+
 public class EventTest extends AppCompatActivity {
 
-
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,24 +58,29 @@ public class EventTest extends AppCompatActivity {
         Map eventMap = new Map(event_roomName.toString(), event_buildingName.toString());
         final int mapImgValue = eventMap.findMap();
 
-        final Button mapsButton = (Button) findViewById(R.id.toMap);
-        mapsButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                Intent intent = new Intent(EventTest.this, MapImgActivity.class);
-                //intent.putExtra("mapNames", .toString());
-                intent.putExtra("mapImage",mapImgValue);
-                startActivity(intent);
+        listView = (ListView) findViewById(R.id.eventListView);
+
+        ArrayAdapter<String> mapsAdapter = new ArrayAdapter<String>(EventTest.this, android.R.layout.simple_list_item_1, (List<String>) event_roomName);
+        listView.setAdapter(mapsAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent toMapImgActivity = new Intent(EventTest.this, MapImgActivity.class);
+                //toMapImgActivity.putExtra("mapNames", listView.getItemAtPosition(i).toString());
+                toMapImgActivity.putExtra("mapImage", mapImgValue);
+                startActivity(toMapImgActivity);
+
+
+                // For testing sponsors page only
+                final Button sponsorButton = (Button) findViewById(R.id.toSponsor);
+                sponsorButton.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Intent intent = new Intent(EventTest.this, SponsorActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
             }
         });
-
-        // For testing sponsors page only
-        final Button sponsorButton = (Button) findViewById(R.id.toSponsor);
-        sponsorButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                Intent intent = new Intent(EventTest.this, SponsorActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 }
