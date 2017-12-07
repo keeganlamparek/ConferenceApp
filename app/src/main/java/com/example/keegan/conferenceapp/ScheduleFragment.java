@@ -77,13 +77,13 @@ public class ScheduleFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
 
         buildSchedules();
-        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this.getActivity() , R.layout.list_item_layout, listOfDays);
-        ListView listOfDays = view.findViewById(R.id.fragmentScheduleList);
+        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this.getActivity() , R.layout.list_item_layout, R.id.listItem, listOfDays);
+        ListView listOfDays = (ListView) view.findViewById(R.id.fragmentScheduleList);
         listOfDays.setAdapter(mAdapter);
         listOfDays.setOnItemClickListener(mMessageClickedHandler);
 
 
-        Button mainMapsButton = view.findViewById(R.id.mapsButton);
+        Button mainMapsButton = (Button) view.findViewById(R.id.mapsButton);
         mainMapsButton.setOnClickListener(new View.OnClickListener()
                                           {
                                               public void onClick(View v){

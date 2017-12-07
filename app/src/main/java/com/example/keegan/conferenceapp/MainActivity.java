@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.navigation_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        startWelcomeScreen();
+     //   startWelcomeScreen();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_main, new HomeFragment());
         transaction.commit();
