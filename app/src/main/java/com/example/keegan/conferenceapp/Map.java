@@ -18,23 +18,36 @@ public class Map {
 
     }
 
-    public Class findMap() {
+    //public Class findMap() {
+    public int findMap(){
 
-        Class mapAcitiviy = KentSecondFloorActivity.class;
+        //Class mapAcitiviy = MapImgActivity.class;
+        int outputMapValue = 0;
 
     if (buildingName.equals("Kent"))
     {
         if (roomName.equals("Carse") || roomName.equals("Principal Black Box"))
         {
-            mapAcitiviy = KentFirstFloorActivity.class;
+            int mapResource = R.drawable.kent_first_floor;
+            //mapAcitiviy = MapImgActivity.class;
+
+            outputMapValue = mapResource;
+
         }
         if (roomName.equals("Hubbel") || roomName.equals("Student Senate"))
         {
-            mapAcitiviy = KentSecondFloorActivity.class;
+            int mapResource = R.drawable.kent_second_floor;
+
+           // mapAcitiviy = MapImgActivity.class;
+
+            outputMapValue = mapResource;
+
         }
     }
 
-        return (mapAcitiviy);
+        //return (mapAcitiviy);
+
+        return outputMapValue;
     }
 
 }

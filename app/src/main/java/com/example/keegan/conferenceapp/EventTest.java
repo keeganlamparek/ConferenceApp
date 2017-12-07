@@ -7,6 +7,7 @@ package com.example.keegan.conferenceapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.content.Intent;
@@ -28,7 +29,7 @@ public class EventTest extends AppCompatActivity {
         event1_presenters[0] = "Wallace";
         event1_presenters[1] = "Dan";
 
-        Event testEvent1 = new Event(1, "Building Software", "This is a test for event", "This presentation will look into how to build software that will last.  When making software, always build with longeviy and ease of use in mind.  This presentation should make anyone's code last far longer than what it would originaly.  More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.", event1_track, event1_presenters, "Kent", "Principal Black Box", "2017", "Presenting", "Group presenting now");
+        Event testEvent1 = new Event(1, "Building Software", "This is a test for event", "This presentation will look into how to build software that will last.  When making software, always build with longeviy and ease of use in mind.  This presentation should make anyone's code last far longer than what it would originaly.  More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.", event1_track, event1_presenters, "Kent", "Hubbel", "2017", "Presenting", "Group presenting now");
 
         final TextView event_title = (TextView) findViewById(R.id.event_title);
         event_title.setText(testEvent1.get_event_title());
@@ -49,12 +50,16 @@ public class EventTest extends AppCompatActivity {
         event_roomName.setText(testEvent1.get_event_roomName());
 
         Map thisMap = new Map(testEvent1.get_event_roomName_for_map(), testEvent1.get_event_buildingName_for_map());
-        final Class mapFloor = thisMap.findMap();
+        //final Class mapFloor = thisMap.findMap();
+        Map eventMap = new Map(event_roomName.toString(), event_buildingName.toString());
+        final int mapImgValue = eventMap.findMap();
 
         final Button mapsButton = (Button) findViewById(R.id.toMap);
         mapsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                Intent intent = new Intent(EventTest.this, mapFloor);
+                Intent intent = new Intent(EventTest.this, MapImgActivity.class);
+                //intent.putExtra("mapNames", .toString());
+                intent.putExtra("mapImage",mapImgValue);
                 startActivity(intent);
             }
         });

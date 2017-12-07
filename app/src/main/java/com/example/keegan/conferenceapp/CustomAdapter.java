@@ -3,6 +3,7 @@ package com.example.keegan.conferenceapp;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,7 @@ import android.widget.TextView;
  * Created by Braeden Ingersoll on 11/28/2017.
  */
 
-/*public class CustomAdapter extends ArrayAdapter<String> {
+public class CustomAdapter extends ArrayAdapter<String> {
 
     String[] mapName;
     int[] mapsResourceId;
@@ -38,27 +39,28 @@ import android.widget.TextView;
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         ViewHolder mapsViewHolder = new ViewHolder();
-        if(convertView == null) {
-
+        if (convertView == null) {
+            Log.d("nullContentView", "Content view is null");
             LayoutInflater customLayoutInflater = (LayoutInflater) customContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = customLayoutInflater.inflate(R.layout.listview_item_layout, parent, false);
-            mapsViewHolder.mapImage = (ImageView) convertView.findViewById(R.id.imageView);
+            mapsViewHolder.mapImage = (ImageView) convertView.findViewById(R.id.mapImageView);
             mapsViewHolder.mapText = (TextView) convertView.findViewById(R.id.textView);
             convertView.setTag(mapsViewHolder);
-        }
-
-        else{
+        } else {
             mapsViewHolder = (ViewHolder) convertView.getTag();
+            Log.d("nullContentView", "Content view is not null");
         }
 
+        Log.d("nullContentView", mapsViewHolder.mapImage.toString());
         mapsViewHolder.mapImage.setImageResource(mapsResourceId[position]);
         mapsViewHolder.mapText.setText(mapName[position]);
 
         return convertView;
     }
 
-    static class ViewHolder{
+    static class ViewHolder {
         ImageView mapImage;
         TextView mapText;
-    }*/
+    }
+}
 
