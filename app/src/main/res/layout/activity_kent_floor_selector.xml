@@ -4,33 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.keegan.conferenceapp.KentFloorSelectorActivity">
+    tools:context="com.example.keegan.conferenceapp.MapSelectorActivity"
+    tools:layout_editor_absoluteY="25dp"
+    tools:layout_editor_absoluteX="0dp">
 
-    <Button
-        android:id="@+id/firstFloorButton"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mapsToolbar"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="102dp"
-        android:contextClickable="false"
-        android:text="@string/firstFloorMapButton"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="7dp" />
 
-    <Button
-        android:id="@+id/secondFloorButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kent Second Floor Map"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
+    <ListView
+        android:id="@+id/mapsListView"
+        android:layout_width="293dp"
+        android:layout_height="240dp"
+        android:layout_marginBottom="215dp"
+        android:layout_marginRight="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="166dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

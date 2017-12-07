@@ -7,26 +7,50 @@ public class Map {
 
     private String roomName;
     private String buildingName;
+    private int mapDrawableId;
 
 
-    public Map(String eventRoom, int roomNumber, String buildingName) {
+
+
+    public Map(String roomName, String buildingName) {
         this.roomName = roomName;
         this.buildingName = buildingName;
+
     }
 
-    public String findMap(String buildingName, String roomName) {
-    /*if (buildingName.equals("Kent"))
+    //public Class findMap() {
+    public int findMap(){
+
+        //Class mapAcitiviy = MapImgActivity.class;
+        int outputMapValue = 0;
+
+    if (buildingName.equals("Kent"))
     {
-        if (roomName.equals("Carse") || roomName.equals("Principal Black Box")) ||
+        if (roomName.equals("Carse") || roomName.equals("Principal Black Box"))
         {
-            String floorType = "Kent First Floor";
+            int mapResource = R.drawable.kent_first_floor;
+            //int mapResource = 0
+
+            //mapAcitiviy = MapImgActivity.class;
+
+            //outputMapValue = mapResource;
+
         }
-        if (roomName.equals("Hubbel")) || roomName.equals("Student Senate")
+        if (roomName.equals("Hubbel") || roomName.equals("Student Senate"))
         {
-            String floorType = "Kent Second Floor";
+           int mapResource = R.drawable.kent_second_floor;
+            //int mapResource = 1
+
+           // mapAcitiviy = MapImgActivity.class;
+
+           // outputMapValue = mapResource;
+
         }
     }
-}*/
-        return ("Hi");
+
+        //return (mapAcitiviy);
+
+        return outputMapValue;
     }
+
 }
