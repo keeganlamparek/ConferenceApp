@@ -48,6 +48,7 @@ public class ScheduleActivity extends AppCompatActivity {
     public void switchToEvent(View view) {
 
         Intent i = new Intent(this, EventTest.class);
+        i.putExtra("SessionID", );
         startActivity(i);
     }
 }
