@@ -19,6 +19,8 @@ public class Map {
     }
 
     //public Class findMap() {
+
+    //Function to return the resource files for the proper map
     public int findMap(){
 
         //Class mapAcitiviy = MapImgActivity.class;

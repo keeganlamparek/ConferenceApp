@@ -17,17 +17,19 @@ public class MapSelectorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kent_floor_selector);
+        setContentView(R.layout.activity_map_floor_selector);
 
         listView = (ListView) findViewById(R.id.mapsListView);
        // int[] mapImageArray = {R.drawable.kent_first_floor, R.drawable.kent_second_floor, R.drawable.simpson_college_campus_map, R.drawable.simpson_parking_map};
         //CustomAdapter mapsAdapter = new CustomAdapter(MapSelectorActivity.this, getResources().getStringArray(R.array.mapNames), mapImageArray);
         //listView.setAdapter(mapsAdapter);
 
+        //Creates adapter that populates the listView with string array of all maps.
         ArrayAdapter<String> mapsAdapter = new ArrayAdapter<String>(MapSelectorActivity.this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.mapNames));
         listView.setAdapter(mapsAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
+            //Passes the position of the drawable resource that matches the item selected
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent toMapImgActivity = new Intent(MapSelectorActivity.this, MapImgActivity.class);
                 toMapImgActivity.putExtra("mapNames", listView.getItemAtPosition(i).toString());
