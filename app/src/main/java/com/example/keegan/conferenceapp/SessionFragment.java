@@ -4,36 +4,25 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
-import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link TimeBlockFragment.OnFragmentInteractionListener} interface
+ * {@link SessionFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link TimeBlockFragment#newInstance} factory method to
+ * Use the {@link SessionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TimeBlockFragment extends Fragment {
+public class SessionFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private List timeBlocks = new ArrayList<TimeBlock>();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -41,7 +30,7 @@ public class TimeBlockFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public TimeBlockFragment() {
+    public SessionFragment() {
         // Required empty public constructor
     }
 
@@ -51,11 +40,11 @@ public class TimeBlockFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TimeBlockFragment.
+     * @return A new instance of fragment SessionFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TimeBlockFragment newInstance(String param1, String param2) {
-        TimeBlockFragment fragment = new TimeBlockFragment();
+    public static SessionFragment newInstance(String param1, String param2) {
+        SessionFragment fragment = new SessionFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,69 +65,37 @@ public class TimeBlockFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_time_block, container, false);
 
-        createTimeBlocks();
-        String day = "";
+        View view = inflater.inflate(R.layout.fragment_session, container, false);
+        String[] event1_track = new String[2];
+        event1_track[0] = "Coding";
+        event1_track[1] = "Presentation";
 
-        Bundle bundle = getArguments();
-        if (bundle != null)
-        {
-            day = bundle.getString("day");
-        }
-        TextView timeBlockDayText = (TextView) view.findViewById(R.id.dayOfTimeBlockText);
-        ListView timeBlockListView = (ListView) view.findViewById(R.id.timeBlockList);
-        TimeBlockAdapter timeBlockAdapter = new TimeBlockAdapter(this.getActivity(), timeBlocks);
+        String[] event1_presenters = new String[2];
+        event1_presenters[0] = "Wallace";
+        event1_presenters[1] = "Dan";
 
-        timeBlockDayText.setText(day);
-        timeBlockListView.setAdapter(timeBlockAdapter);
+        Event testEvent1 = new Event(1, "Building Software", "This is a test for event", "This presentation will look into how to build software that will last.  When making software, always build with longeviy and ease of use in mind.  This presentation should make anyone's code last far longer than what it would originaly.  More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.", event1_track, event1_presenters, "Kent", "Hubbel", "2017", "Presenting", "Group presenting now");
 
+        final TextView event_title = (TextView) view.findViewById(R.id.event_title);
+        event_title.setText(testEvent1.get_event_title());
 
-        timeBlockListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        final TextView session_long_description = (TextView) view.findViewById(R.id.event_long_description);
+        session_long_description.setText(testEvent1.get_event_long_description());
 
-             //   String passDay = "";
-            //    passDay = timeBlocks.get(i).toString();
+        final TextView event_tracks = (TextView) view.findViewById(R.id.event_track_description);
+        event_tracks.setText(testEvent1.get_event_tracks());
 
-             //   Bundle bundle = new Bundle();
-             //   bundle.putString("day", passDay);
+        final TextView event_presenters = (TextView) view.findViewById(R.id.presenters);
+        event_presenters.setText(testEvent1.get_event_presenters());
 
+        final TextView event_buildingName = (TextView) view.findViewById(R.id.event_buildingName);
+        event_buildingName.setText(testEvent1.get_event_buildingName());
 
-                Fragment fragment = new EventsFragment();
-             //   fragment.setArguments(bundle);
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.content_main, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
-
+        final TextView event_roomName = (TextView) view.findViewById(R.id.event_roomName);
+        event_roomName.setText(testEvent1.get_event_roomName());
 
         return view;
-    }
-
-    private void createTimeBlocks(){
-
-        GregorianCalendar startTime1 = new GregorianCalendar(2017, 10, 13, 9, 0);
-        GregorianCalendar endTime1 = new GregorianCalendar(2017, 10, 13, 10, 0);
-
-        GregorianCalendar startTime2 = new GregorianCalendar(2017, 10, 13, 10, 15);
-        GregorianCalendar endTime2 = new GregorianCalendar(2017, 10, 13, 11, 15);
-
-        GregorianCalendar startTime3 = new GregorianCalendar(2017, 10, 13, 11, 30);
-        GregorianCalendar endTime3 = new GregorianCalendar(2017, 10, 13, 12, 5);
-
-        TimeBlock timeBlock1 = new TimeBlock(startTime1, endTime1);
-        TimeBlock timeBlock2 = new TimeBlock(startTime2, endTime2);
-        TimeBlock timeBlock3= new TimeBlock(startTime3, endTime3);
-
-        timeBlocks.add(timeBlock1);
-        timeBlocks.add(timeBlock2);
-        timeBlocks.add(timeBlock3);
-
-
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -101,16 +101,20 @@ public class ScheduleFragment extends Fragment {
     private AdapterView.OnItemClickListener mMessageClickedHandler = new AdapterView.OnItemClickListener() {
         public void onItemClick(AdapterView parent, View v, int position, long id) {
             // Do something in response to the click
-           /* Intent i = new Intent(getContext(), ScheduleActivity.class);
-            String passDay = "";
 
+            String passDay = "";
             passDay = listOfDays.get(position).toString();
 
-            i.putExtra("day",passDay);
+            Bundle bundle = new Bundle();
+            bundle.putString("day", passDay);
 
-            startActivity(i); */
+
+
+
+
 
             Fragment fragment = new TimeBlockFragment();
+            fragment.setArguments(bundle);
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.content_main, fragment);

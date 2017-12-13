@@ -17,6 +17,7 @@ public class Event {
     private String yearID;
     private String event_statusDescription;
     private String event_statusNotes;
+    private int  timeBlockID;
 
     public Event(int sessionID, String event_title, String event_description, String event_LongDescription, String[] event_trackDescription, String[] event_presenters, String event_buildingName, String event_roomName, String yearID, String event_statusDescription, String event_statusNotes) {
         this.event_title = event_title;
