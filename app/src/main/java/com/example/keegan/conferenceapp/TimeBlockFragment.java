@@ -33,11 +33,13 @@ public class TimeBlockFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private List timeBlocks = new ArrayList<TimeBlock>();
+    private List<TimeBlock> timeBlocks;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String day;
+    private int[] timeBlockHolderID = new int[2];
 
     private OnFragmentInteractionListener mListener;
 
@@ -78,14 +80,16 @@ public class TimeBlockFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_time_block, container, false);
 
-        createTimeBlocks();
-        String day = "";
+        day = "";
 
         Bundle bundle = getArguments();
         if (bundle != null)
         {
             day = bundle.getString("day");
         }
+
+        createTimeBlocks();
+
         TextView timeBlockDayText = (TextView) view.findViewById(R.id.dayOfTimeBlockText);
         ListView timeBlockListView = (ListView) view.findViewById(R.id.timeBlockList);
         TimeBlockAdapter timeBlockAdapter = new TimeBlockAdapter(this.getActivity(), timeBlocks);
@@ -98,15 +102,29 @@ public class TimeBlockFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-             //   String passDay = "";
-            //    passDay = timeBlocks.get(i).toString();
+                int passTimeBlockID = 1;
 
-             //   Bundle bundle = new Bundle();
-             //   bundle.putString("day", passDay);
+                switch (timeBlockHolderID[i]){
+                    case 1:
+                        passTimeBlockID = 1;
+                        break;
+                    case 2:
+                        passTimeBlockID = 2;
+                        break;
+                    case 3:
+                        passTimeBlockID = 3;
+                        break;
+                    case 4:
+                        passTimeBlockID = 4;
+                        break;
 
+                }
+
+                Bundle bundle = new Bundle();
+                bundle.putInt("timeBlockID", passTimeBlockID);
 
                 Fragment fragment = new EventsFragment();
-             //   fragment.setArguments(bundle);
+                fragment.setArguments(bundle);
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.content_main, fragment);
@@ -127,19 +145,29 @@ public class TimeBlockFragment extends Fragment {
         GregorianCalendar startTime2 = new GregorianCalendar(2017, 10, 13, 10, 15);
         GregorianCalendar endTime2 = new GregorianCalendar(2017, 10, 13, 11, 15);
 
-        GregorianCalendar startTime3 = new GregorianCalendar(2017, 10, 13, 11, 30);
-        GregorianCalendar endTime3 = new GregorianCalendar(2017, 10, 13, 12, 5);
-
-
+        GregorianCalendar startTime3 = new GregorianCalendar(2017, 10, 13, 12, 0);
+        GregorianCalendar endTime3 = new GregorianCalendar(2017, 10, 13, 12, 30);
 
         TimeBlock timeBlock1 = new TimeBlock(startTime1, endTime1, 1);
         TimeBlock timeBlock2 = new TimeBlock(startTime2, endTime2, 2);
-        TimeBlock timeBlock3= new TimeBlock(startTime3, endTime3, 3);
+        TimeBlock timeBlock3 = new TimeBlock(startTime1, endTime1, 3);
+        TimeBlock timeBlock4 = new TimeBlock(startTime2, endTime2, 4);
 
+        timeBlocks = new ArrayList<TimeBlock>();
 
-        timeBlocks.add(timeBlock1);
-        timeBlocks.add(timeBlock2);
-        timeBlocks.add(timeBlock3);
+        if (day.equals("October 12")){
+            timeBlocks.add(timeBlock1);
+            timeBlocks.add(timeBlock2);
+            timeBlockHolderID[0] = timeBlock1.getTimeBlockID();
+            timeBlockHolderID[1] = timeBlock2.getTimeBlockID();
+        }
+        else{
+            timeBlocks.add(timeBlock3);
+            timeBlocks.add(timeBlock4);
+            timeBlockHolderID[0] = timeBlock3.getTimeBlockID();
+            timeBlockHolderID[1] = timeBlock4.getTimeBlockID();
+        }
+
 
 
     }

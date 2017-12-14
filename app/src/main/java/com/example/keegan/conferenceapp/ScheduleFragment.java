@@ -85,15 +85,6 @@ public class ScheduleFragment extends Fragment {
         listOfDays.setOnItemClickListener(mMessageClickedHandler);
 
 
-        Button mainMapsButton = (Button) view.findViewById(R.id.mapsButton);
-        mainMapsButton.setOnClickListener(new View.OnClickListener()
-                                          {
-                                              public void onClick(View v){
-                                                  Intent toMapSelector = new Intent(getContext(), MapSelectorActivity.class);
-                                                  startActivity(toMapSelector);
-                                              }
-                                          }
-        );
 
         return view;
     }

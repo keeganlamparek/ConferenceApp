@@ -36,7 +36,7 @@ public class TimeBlock {
         else
             minuteString = "" + minute;
 
-        return hourString + ":" + minuteString;
+        return hourString + ":" + minuteString + " AM to";
     }
 
     public String endTimeToString(){
@@ -54,9 +54,12 @@ public class TimeBlock {
         else
             minuteString = "" + minute;
 
-        return hourString + ":" + minuteString;
+        return hourString + ":" + minuteString + " AM";
     }
 
+    public int getTimeBlockID(){
+        return this.timeBlockID;
+    }
 
 
     public String toString(){

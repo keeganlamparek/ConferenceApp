@@ -19,7 +19,7 @@ public class Event {
     private String event_statusNotes;
     private int  timeBlockID;
 
-    public Event(int sessionID, String event_title, String event_description, String event_LongDescription, String[] event_trackDescription, String[] event_presenters, String event_buildingName, String event_roomName, String yearID, String event_statusDescription, String event_statusNotes) {
+    public Event(int sessionID, String event_title, String event_description, String event_LongDescription, String[] event_trackDescription, String[] event_presenters, String event_buildingName, String event_roomName, String yearID, String event_statusDescription, String event_statusNotes, int timeBlockID) {
         this.event_title = event_title;
         this.sessionID = sessionID;
         this.event_description = event_description;
@@ -31,10 +31,19 @@ public class Event {
         this.yearID = yearID;
         this.event_statusDescription = event_statusDescription;
         this.event_statusNotes = event_statusNotes;
+        this.timeBlockID = timeBlockID;
     }
 
     public String get_event_title() {
         return this.event_title;
+    }
+
+    public int getSessionID(){
+        return this.sessionID;
+    }
+
+    public int getTimeBlockID(){
+        return this.timeBlockID;
     }
 
     public String get_event_long_description() {
