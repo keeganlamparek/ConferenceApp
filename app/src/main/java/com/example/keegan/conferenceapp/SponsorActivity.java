@@ -29,7 +29,7 @@ public class SponsorActivity extends Activity implements View.OnClickListener {
 
         android.support.v7.widget.AppCompatImageView ferrilli = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorferrilli);
         android.support.v7.widget.AppCompatImageView courseLeaf = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorcourseleaf);
-      /*  android.support.v7.widget.AppCompatImageView portalGuar = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorportalguard);
+        android.support.v7.widget.AppCompatImageView portalGuar = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorportalguard);
         android.support.v7.widget.AppCompatImageView softDocs = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorsoftdocs);
         android.support.v7.widget.AppCompatImageView asrAnalytics = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorasranalytics);
         android.support.v7.widget.AppCompatImageView nationalStudentClearing = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsornationalstudentclearinghouse);
@@ -40,7 +40,7 @@ public class SponsorActivity extends Activity implements View.OnClickListener {
         android.support.v7.widget.AppCompatImageView ellucian = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorellucian);
         android.support.v7.widget.AppCompatImageView shamrockSolutions = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorshamrocksolutions);
         android.support.v7.widget.AppCompatImageView axiomElite = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsoraxiomelite);
-        android.support.v7.widget.AppCompatImageView jadu = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorjadu);*/
+        android.support.v7.widget.AppCompatImageView jadu = (android.support.v7.widget.AppCompatImageView) findViewById(R.id.sponsorjadu);
 
         ferrilli.setOnClickListener((View.OnClickListener) this);
 
@@ -58,7 +58,7 @@ public class SponsorActivity extends Activity implements View.OnClickListener {
             case R.id.sponsorcourseleaf:
                 switchToBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.leepfrog.com/courseleaf/"));
                 break;
-           /* case R.id.sponsorportalguard:
+            case R.id.sponsorportalguard:
                 switchToBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.portalguard.com/"));
                 break;
             case R.id.sponsorsoftdocs:
@@ -93,7 +93,7 @@ public class SponsorActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.sponsorjadu:
                 switchToBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.jadu.net/"));
-                break;*/
+                break;
     }
     startActivity(switchToBrowser);
 }

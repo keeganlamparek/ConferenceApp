@@ -35,7 +35,6 @@ public class MapSelectorActivity extends AppCompatActivity {
                 toMapImgActivity.putExtra("mapNames", listView.getItemAtPosition(i).toString());
                 toMapImgActivity.putExtra("mapImage", i);
                 startActivity(toMapImgActivity);
-
             }
         });
 

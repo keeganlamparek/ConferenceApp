@@ -16,6 +16,49 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return day.get(GregorianCalendar.MONTH) + "/" + day.get(GregorianCalendar.DAY_OF_MONTH);
+        String monthName = "";
+        int monthNumber = day.get(GregorianCalendar.MONTH);
+
+        switch (monthNumber){
+            case 1:
+                monthName = "January";
+                break;
+            case 2:
+                monthName = "February";
+                break;
+            case 3:
+                monthName = "March";
+                break;
+            case 4:
+                monthName = "April";
+                break;
+            case 5:
+                monthName = "May";
+                break;
+            case 6:
+                monthName = "June";
+                break;
+            case 7:
+                monthName = "July";
+                break;
+            case 8:
+                monthName = "August";
+                break;
+
+            case 9:
+                monthName = "September";
+                break;
+            case 10:
+                monthName = "October";
+                break;
+            case 11:
+                monthName = "November";
+                break;
+            case 12:
+                monthName = "December";
+                break;
+        }
+
+        return monthName + " " + day.get(GregorianCalendar.DAY_OF_MONTH);
     }
 }

@@ -13,6 +13,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +34,8 @@ public class EventsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private List<String> listOfEventNames = new ArrayList<String>();
 
     private OnFragmentInteractionListener mListener;
 
@@ -72,9 +77,9 @@ public class EventsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_events, container, false);
         createEvents();
 
-        String[] testEventArray = {"Event1", "Event2", "Event3", "Event4"};
+
         ListView listOfEvents = (ListView) view.findViewById(R.id.listViewEvents);
-        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this.getActivity(), R.layout.list_item_layout, R.id.listItem, testEventArray);
+        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this.getActivity(), R.layout.list_item_layout, R.id.listItem, listOfEventNames);
         listOfEvents.setAdapter(mAdapter);
 
         listOfEvents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -101,7 +106,7 @@ public class EventsFragment extends Fragment {
 
     private void createEvents(){
 
-        /*String[] event1_track = new String[2];
+        String[] event1_track = new String[2];
         event1_track[0] = "Coding";
         event1_track[1] = "Presentation";
 
@@ -109,15 +114,15 @@ public class EventsFragment extends Fragment {
         event1_presenters[0] = "Wallace";
         event1_presenters[1] = "Dan";
 
-        Event testEvent1 = new Event(1, "Building Software", "This is a test for event", "This presentation will look into how to build software that will last.  When making software, always build with longeviy and ease of use in mind.  This presentation should make anyone's code last far longer than what it would originaly.  More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.More Text.", event1_track, event1_presenters, "Kent", "Hubbel", "2017", "Presenting", "Group presenting now");
+        Event testEvent1 = new Event(1, "Building Software", "This is a test for event", "This presentation will look into how to build software that will last.  When making software, always build with longeviy and ease of use in mind.  This presentation should make anyone's code last far longer than what it would originally.", event1_track, event1_presenters, "Kent", "Hubbel", "2017", "Presenting", "Group presenting now");
 
         String[] event2_track = new String[] {"Financial Assistance"};
         String[] event2_presenters = new String[] {"Amanda Foskett"};
         Event testEvent2 = new Event(2, "Borrower Based Year Loan Processing", "Borrower Based Year Loan Processing", "How are you as an institution working around the limitations or set up for autopackaging and getting your students awarded? Are the limitations of the software preventing you from awarding students on a BBY schedule even though it might be beneficial to them? What are some of the creative solutions people are employing to get around this and is there a fix coming from Ellucian soon??", event2_track, event2_presenters, "Kent", "Student Senate", "2017", "Final", "");
 
         String[] event3_track = new String[] {"Technical Track"};
-        String[] event3_pressenters = new String[] {"Shelly Lowery"};
-        Event testEvent3 = new Event(3, "Get Help, Discover Resources, and Network with eCommunities", "Get Help, Discover Resources, and Network with eCommunities", "Join us to learn about the roles of eCommunities captains, users, and the community as a whole. Find out how to get answers and connect with others using the same technologies. And discover Port Hub, which includes eCommunities, Support Center, eSearch, Education Services, Download Center, and much more.", event3_track, event3_pressenters, "Kent", "Principal Black Box", "2017", "Final", " ");
+        String[] event3_presenters = new String[] {"Shelly Lowery"};
+        Event testEvent3 = new Event(3, "Get Help, Discover Resources, and Network with eCommunities", "Get Help, Discover Resources, and Network with eCommunities", "Join us to learn about the roles of eCommunities captains, users, and the community as a whole. Find out how to get answers and connect with others using the same technologies. And discover Port Hub, which includes eCommunities, Support Center, eSearch, Education Services, Download Center, and much more.", event3_track, event3_presenters, "Kent", "Principal Black Box", "2017", "Final", " ");
 
         String[] event4_track = new String[] {"Technical Track"};
         String[] event4_presenters = new String[] {"Marcia Gullickson"};
@@ -130,7 +135,14 @@ public class EventsFragment extends Fragment {
         String[] event6_track = new String[] {"Human Resources and Payroll"};
         String[] event6_presenters = new String[] {"Mimi Bartley-Nancarrow"};
         Event testEvent6 = new Event(6, "HR Roundtable", "HR Roundtable", "We invite you to join colleagues for a roundtable discussion. Come network with those who share similar interests and responsibilities and discuss topics of particular interest to you. This session is designed to encourage you to exchange experiences and insights with colleagues.", event6_track, event6_presenters, "Kent", "Hubbel", "2017", "Final", "Final");
-*/    }
+
+        listOfEventNames.add(testEvent1.get_event_title());
+        listOfEventNames.add(testEvent2.get_event_title());
+        listOfEventNames.add(testEvent3.get_event_title());
+        listOfEventNames.add(testEvent4.get_event_title());
+        listOfEventNames.add(testEvent5.get_event_title());
+        listOfEventNames.add(testEvent6.get_event_title());
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

@@ -21,17 +21,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Button;
-import android.widget.Toast;
-
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener,
         ScheduleFragment.OnFragmentInteractionListener, TimeBlockFragment.OnFragmentInteractionListener, SessionFragment.OnFragmentInteractionListener,
-        EventsFragment.OnFragmentInteractionListener {
+        EventsFragment.OnFragmentInteractionListener, MapSelectorFragment.OnFragmentInteractionListener, MapImgFragment.OnFragmentInteractionListener,
+        SponsorsFragment.OnFragmentInteractionListener{
 
     private List<String> listOfDays;
     static GregorianCalendar[][] eventsOnDay1 = new GregorianCalendar[1][5];
@@ -45,7 +40,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
      //   startWelcomeScreen();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.content_main, new HomeFragment());
+        transaction.replace(R.id.content_main, new ScheduleFragment());
         transaction.commit();
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -55,25 +50,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-       /* buildSchedules();
-        ArrayAdapter<String> mAdapter = new ArrayAdapter<String>(this, R.layout.list_item_layout, listOfDays);
-        ListView listOfDays = (ListView) findViewById(R.id.daysListView);
-        listOfDays.setAdapter(mAdapter);
-        listOfDays.setOnItemClickListener(mMessageClickedHandler);
-
-
-        Button mainMapsButton = (Button)findViewById(R.id.mainMapsButton);
-        mainMapsButton.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v){
-              Intent toMapSelector = new Intent(MainActivity.this, MapSelectorActivity.class);
-                startActivity(toMapSelector);
-            }
-
-        }
-        );*/
 
 
     }
@@ -123,9 +99,11 @@ public class MainActivity extends AppCompatActivity
             case R.id.schedule_menu:
                 fragmentClass = ScheduleFragment.class;
                 break;
-            case R.id.home_menu:
-                fragmentClass = HomeFragment.class;
+            case R.id.maps_menu:
+                fragmentClass = MapSelectorFragment.class;
                 break;
+            case R.id.sponsors_menu:
+                fragmentClass = SponsorsFragment.class;
         }
 
         try{

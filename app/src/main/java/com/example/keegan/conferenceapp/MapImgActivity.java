@@ -21,7 +21,6 @@ public class MapImgActivity extends AppCompatActivity {
         if (bundle != null){
             position = bundle.getInt("mapImage");
             map.setImageResource(mapImageArray[position]);
-
         }
     }
 }

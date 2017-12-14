@@ -10,10 +10,13 @@ public class TimeBlock {
 
     private GregorianCalendar startTime;
     private GregorianCalendar endTime;
+    private int timeBlockID;
 
-    public TimeBlock(GregorianCalendar startTime, GregorianCalendar endTime) {
+    public TimeBlock(GregorianCalendar startTime, GregorianCalendar endTime, int timeBlockID) {
         this.startTime = startTime;
         this.endTime = endTime;
+        this.timeBlockID = timeBlockID;
+
 
     }
 

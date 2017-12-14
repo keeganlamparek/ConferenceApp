@@ -4,44 +4,35 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
-import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link TimeBlockFragment.OnFragmentInteractionListener} interface
+ * {@link MapImgFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link TimeBlockFragment#newInstance} factory method to
+ * Use the {@link MapImgFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TimeBlockFragment extends Fragment {
+public class MapImgFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private List timeBlocks = new ArrayList<TimeBlock>();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    int[] mapImageArray = {R.drawable.kent_first_floor, R.drawable.kent_second_floor, R.drawable.simpson_college_campus_map, R.drawable.simpson_parking_map};
 
     private OnFragmentInteractionListener mListener;
 
-    public TimeBlockFragment() {
+    public MapImgFragment() {
         // Required empty public constructor
     }
 
@@ -51,11 +42,11 @@ public class TimeBlockFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TimeBlockFragment.
+     * @return A new instance of fragment MapImgFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TimeBlockFragment newInstance(String param1, String param2) {
-        TimeBlockFragment fragment = new TimeBlockFragment();
+    public static MapImgFragment newInstance(String param1, String param2) {
+        MapImgFragment fragment = new MapImgFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,72 +67,17 @@ public class TimeBlockFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_time_block, container, false);
+        View view = inflater.inflate(R.layout.fragment_map_img, container, false);
 
-        createTimeBlocks();
-        String day = "";
+        String name = getArguments().getString("mapNames");
+        int mapNumber = getArguments().getInt("mapImage");
 
-        Bundle bundle = getArguments();
-        if (bundle != null)
-        {
-            day = bundle.getString("day");
-        }
-        TextView timeBlockDayText = (TextView) view.findViewById(R.id.dayOfTimeBlockText);
-        ListView timeBlockListView = (ListView) view.findViewById(R.id.timeBlockList);
-        TimeBlockAdapter timeBlockAdapter = new TimeBlockAdapter(this.getActivity(), timeBlocks);
-
-        timeBlockDayText.setText(day);
-        timeBlockListView.setAdapter(timeBlockAdapter);
-
-
-        timeBlockListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-             //   String passDay = "";
-            //    passDay = timeBlocks.get(i).toString();
-
-             //   Bundle bundle = new Bundle();
-             //   bundle.putString("day", passDay);
-
-
-                Fragment fragment = new EventsFragment();
-             //   fragment.setArguments(bundle);
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.content_main, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
-
+        ImageView map = view.findViewById(R.id.mapReciever);
+        TextView mapName = view.findViewById(R.id.nameReciever);
+        map.setImageResource(mapImageArray[mapNumber]);
+        mapName.setText(name);
 
         return view;
-    }
-
-    private void createTimeBlocks(){
-
-        GregorianCalendar startTime1 = new GregorianCalendar(2017, 10, 13, 9, 0);
-        GregorianCalendar endTime1 = new GregorianCalendar(2017, 10, 13, 10, 0);
-
-        GregorianCalendar startTime2 = new GregorianCalendar(2017, 10, 13, 10, 15);
-        GregorianCalendar endTime2 = new GregorianCalendar(2017, 10, 13, 11, 15);
-
-        GregorianCalendar startTime3 = new GregorianCalendar(2017, 10, 13, 11, 30);
-        GregorianCalendar endTime3 = new GregorianCalendar(2017, 10, 13, 12, 5);
-
-
-
-        TimeBlock timeBlock1 = new TimeBlock(startTime1, endTime1, 1);
-        TimeBlock timeBlock2 = new TimeBlock(startTime2, endTime2, 2);
-        TimeBlock timeBlock3= new TimeBlock(startTime3, endTime3, 3);
-
-
-        timeBlocks.add(timeBlock1);
-        timeBlocks.add(timeBlock2);
-        timeBlocks.add(timeBlock3);
-
-
     }
 
     // TODO: Rename method, update argument and hook method into UI event
