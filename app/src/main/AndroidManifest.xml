@@ -20,6 +20,14 @@
         <activity android:name=".ScheduleActivity" />
         <activity android:name=".KentFirstFloorActivity" />
         <activity android:name=".KentFloorSelectorActivity"></activity>
+        <activity android:name=".MapSelectorActivity" />
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".EventTest" />
+        <activity android:name=".WelcomeScreen" />
+        <activity android:name=".MapImgActivity"></activity>
+        <activity android:name=".SponsorActivity"></activity>
+
     </application>
+
 
 </manifest>

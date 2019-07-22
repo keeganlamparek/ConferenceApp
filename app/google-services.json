@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "565115282982",
+    "firebase_url": "https://conferenceapp-784bf.firebaseio.com",
+    "project_id": "conferenceapp-784bf",
+    "storage_bucket": "conferenceapp-784bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565115282982:android:84770ad90a496d66",
+        "android_client_info": {
+          "package_name": "com.example.keegan.conferenceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565115282982-idsalvrsrq12ni33662fodp2u8r03qs5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.keegan.conferenceapp",
+            "certificate_hash": "49e21af8bdeab5e1b82877fb55e48b25b45d012c"
+          }
+        },
+        {
+          "client_id": "565115282982-jbv0tqst7vn9g51pu4h5ap304hbmfhtg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1P03zZ3PnvTq18gLnvTC9UqG-Orji_Ic"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565115282982-jbv0tqst7vn9g51pu4h5ap304hbmfhtg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,30 @@
 <resources>
     <string name="app_name">ConferenceApp</string>
     <string name="mainActivityText">Select Date</string>
+    <string name="event_title">Event Title Default String</string>
+    <string name="event_long_description">Event Long Description Default String</string>
+    <string name="event_presenters">Event Presenters Default String</string>
+    <string name="event_buildingName">Event Building Name Default String</string>
+    <string name="event_roomName">Event Room Name Default String</string>
+    <string name="event_track_description">Event Track Description Default Name</string>
+    <string name="mapsMainTitle">Maps</string>
+    <string name="firstFloorMapTitle">First Floor Kent Map</string>
+    <string name="secondFloorMapTitle">Second Floor Kent Map</string>
+    <string name="welcome_screen_text">Welcome Default Text</string>
+    <string name="schedule">Schedule</string>
+    <string name="maps">Maps</string>
+    <string name="sponsors">Sponsors</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Add Options</string>
+    <string name="home">Home</string>
+    <string name="mapSelectorPropmpt">Please select a map</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="mapNames">
+        <item>Kent First Floor</item>
+        <item>Kent Second Floor</item>
+        <item>Simpson College Campus Map</item>
+        <item>Simpson Guest Parking Map</item>
+    </string-array>
 </resources>

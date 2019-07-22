@@ -1,0 +1,93 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.keegan.conferenceapp.SessionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/event_title"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/event_title"
+            android:textSize="25sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:textColor="@color/eventText" />
+
+        <TextView
+            android:id="@+id/event_long_description"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/event_long_description"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintLeft_toLeftOf="@+id/event_title"
+            app:layout_constraintTop_toBottomOf="@+id/event_title"
+            tools:layout_constraintTop_creator="1"
+            tools:textColor="@color/eventText" />
+
+        <TextView
+            android:id="@+id/presenters"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/event_presenters"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintLeft_toLeftOf="@+id/event_long_description"
+            app:layout_constraintTop_toBottomOf="@+id/event_long_description"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:textColor="@color/eventText" />
+
+        <TextView
+            android:id="@+id/event_buildingName"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/event_buildingName"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintLeft_toLeftOf="@+id/presenters"
+            app:layout_constraintTop_toBottomOf="@+id/presenters"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:textColor="@color/eventText" />
+
+        <TextView
+            android:id="@+id/event_roomName"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/event_roomName"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintLeft_toLeftOf="@+id/event_buildingName"
+            app:layout_constraintTop_toBottomOf="@+id/event_buildingName"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:textColor="@color/eventText" />
+
+        <TextView
+            android:id="@+id/event_track_description"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/event_track_description"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintLeft_toLeftOf="@+id/event_roomName"
+            app:layout_constraintTop_toBottomOf="@+id/event_roomName"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:textColor="@color/eventText" />
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>
